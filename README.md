@@ -70,7 +70,26 @@ Setiap artikel kini memiliki penjelasan komprehensif 3 hingga 4 sub-bab dengan f
 
 ---
 
-## 📱 Cara Membuka di HP Android
+## 🚀 Cara Auto-Sync & Upload ke GitHub via Termux (`upartikel.sh`)
+
+Untuk mempublikasikan situs dan melakukan pembaruan otomatis ke server GitHub, jalankan perintah berikut di aplikasi **Termux**:
+
+```bash
+./upartikel.sh "Catatan pembaruan artikel"
+```
+
+*Atau cukup ketik `./upartikel.sh` lalu ikuti petunjuk interaktif di layar.*
+
+Skrip ini akan secara otomatis:
+1. Memperbarui versi dan stempel waktu di `version.json`.
+2. Melakukan *commit* semua perubahan berkas.
+3. Mengunggah (*push*) langsung ke server repositori GitHub Anda.
+4. Memberikan tautan situs web GitHub Pages yang aktif.
+5. Memancarkan sinyal auto-sync sehingga pengunjung yang sedang membaca artikel akan otomatis mendapatkan versi terbaru tanpa terjebak cache lama!
+
+---
+
+## 📱 Cara Membuka Langsung di HP Android (Luring)
 1. Buka aplikasi **File Manager** (atau Files by Google, MT Manager, ZArchiver).
 2. Arahkan ke folder:  
    `Penyimpanan Internal` ➔ `Project Artikel` ➔ `Tema keajaiban dunia`.
