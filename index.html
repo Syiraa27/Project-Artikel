@@ -76,9 +76,9 @@
       --modal-bg: #ffffff;
       --modal-border: var(--border-accent);
       --drawer-bg: rgba(255, 255, 255, 0.98);
-      --hero-overlay-bg: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, rgba(244, 246, 251, 0.97) 85%);
-      --header-bg-scrolled: rgba(255, 255, 255, 0.92);
-      --dropdown-bg: rgba(255, 255, 255, 0.98);
+      --hero-overlay-bg: radial-gradient(circle at center, rgba(14, 19, 31, 0.3) 0%, rgba(7, 9, 14, 0.88) 85%);
+      --header-bg-scrolled: rgba(13, 18, 30, 0.95);
+      --dropdown-bg: rgba(14, 19, 31, 0.98);
       --highlight-bg: rgba(0, 0, 0, 0.04);
     }
 
@@ -89,16 +89,147 @@
         radial-gradient(circle at 50% 90%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
     }
 
-    [data-theme="light"] .hero-title {
-      background: linear-gradient(135deg, #0f172a 35%, var(--accent-primary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    /* Header & Navigation di Light Mode: Font Putih Bersih di atas Bar Kaca Gelap Mewah */
+    [data-theme="light"] header.main-header,
+    [data-theme="light"] header.main-header.scrolled {
+      background: rgba(13, 18, 30, 0.94) !important;
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28) !important;
     }
 
-    [data-theme="light"] .hero-subtitle,
-    [data-theme="light"] .modal-text-block,
-    [data-theme="light"] .fact-text {
-      color: #334155;
+    [data-theme="light"] .logo-title,
+    [data-theme="light"] nav.desktop-nav a,
+    [data-theme="light"] .dropdown-trigger,
+    [data-theme="light"] .dropdown-trigger span,
+    [data-theme="light"] .mobile-menu-btn,
+    [data-theme="light"] .icon-btn {
+      color: #ffffff !important;
+    }
+
+    [data-theme="light"] .logo-subtitle {
+      color: rgba(255, 255, 255, 0.72) !important;
+    }
+
+    [data-theme="light"] .dropdown-trigger i {
+      color: rgba(255, 255, 255, 0.82) !important;
+    }
+
+    [data-theme="light"] nav.desktop-nav a:hover,
+    [data-theme="light"] nav.desktop-nav a.active,
+    [data-theme="light"] .dropdown-trigger:hover {
+      color: var(--accent-primary) !important;
+    }
+
+    [data-theme="light"] nav.desktop-nav a:hover i,
+    [data-theme="light"] .dropdown-trigger:hover i {
+      color: var(--accent-primary) !important;
+    }
+
+    [data-theme="light"] .icon-btn {
+      background: rgba(255, 255, 255, 0.12) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      color: #ffffff !important;
+    }
+
+    [data-theme="light"] .icon-btn:hover {
+      background: var(--accent-primary) !important;
+      color: #0d121e !important;
+      border-color: var(--accent-primary) !important;
+    }
+
+    /* Submenu Dropdown di Light Mode */
+    [data-theme="light"] .nav-dropdown .dropdown-menu {
+      background: rgba(13, 18, 30, 0.98) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(var(--accent-rgb, 212, 175, 55), 0.2) !important;
+    }
+
+    [data-theme="light"] .dropdown-header-title {
+      color: var(--accent-primary) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu a {
+      color: #ffffff !important;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu a .item-info strong {
+      color: #ffffff !important;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu a .item-info small {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu a:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-color: var(--accent-primary) !important;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu a:hover .item-info strong {
+      color: var(--accent-primary) !important;
+    }
+
+    [data-theme="light"] .nav-dropdown .dropdown-menu a .item-icon {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: var(--accent-primary) !important;
+    }
+
+    /* Landing Page di Light Mode */
+    [data-theme="light"] .hero-title-main {
+      background: linear-gradient(135deg, #0f172a 25%, #1e293b 65%, var(--accent-primary) 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      text-shadow: none !important;
+    }
+
+    [data-theme="light"] .hero-title-sub {
+      color: #334155 !important;
+    }
+
+    [data-theme="light"] .hero-subtitle {
+      color: #475569 !important;
+    }
+
+    [data-theme="light"] .stat-card {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    [data-theme="light"] .stat-card .stat-number {
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .stat-card .stat-sub {
+      color: #64748b !important;
+    }
+
+    [data-theme="light"] .hero-chip {
+      background: rgba(255, 255, 255, 0.85) !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      color: #334155 !important;
+    }
+
+    [data-theme="light"] .hero-chip:hover {
+      background: var(--accent-primary) !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] .btn-tertiary {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border: 1px solid rgba(0, 0, 0, 0.12) !important;
+      color: #1e293b !important;
+    }
+
+    [data-theme="light"] .scroll-mouse {
+      border-color: rgba(0, 0, 0, 0.35) !important;
+    }
+
+    [data-theme="light"] .hero-scroll-indicator {
+      color: #64748b !important;
     }
 
     [data-theme="light"] .section-title,
@@ -815,7 +946,7 @@
     }
 
     /* ==========================================================================
-       HERO & LANDING SECTION
+       HERO & LANDING SECTION (ESTETIK & LUXURY 2026)
        ========================================================================== */
     .hero-section {
       min-height: 100vh;
@@ -823,7 +954,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8rem 1.5rem 4rem;
+      padding: 8.5rem 1.5rem 4.5rem;
       overflow: hidden;
       text-align: center;
     }
@@ -833,8 +964,8 @@
       inset: 0;
       background: 
         radial-gradient(circle at center, rgba(14, 19, 31, 0.2) 0%, rgba(7, 9, 14, 0.95) 85%),
-        url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-      filter: brightness(0.35) contrast(1.1);
+        url('assets/hero-bg.jpg') center/cover no-repeat;
+      filter: brightness(0.38) contrast(1.1);
       transform: scale(1.05);
       animation: heroZoom 24s infinite alternate ease-in-out;
       z-index: 0;
@@ -848,58 +979,169 @@
     .hero-vignette {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(7, 9, 14, 0.9) 100%);
+      background: radial-gradient(circle at 50% 50%, transparent 35%, rgba(7, 9, 14, 0.92) 100%);
       z-index: 1;
+    }
+
+    /* Ambient Glowing Aurora Orbs */
+    .hero-glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(90px);
+      opacity: 0.55;
+    }
+
+    .hero-orb-1 {
+      width: 420px;
+      height: 420px;
+      top: 10%;
+      left: 5%;
+      background: radial-gradient(circle, var(--accent-primary, #d4af37) 0%, rgba(212, 175, 55, 0.05) 70%, transparent 100%);
+      animation: floatOrb1 16s ease-in-out infinite alternate;
+    }
+
+    .hero-orb-2 {
+      width: 480px;
+      height: 480px;
+      bottom: 8%;
+      right: 5%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.35) 0%, rgba(59, 130, 246, 0.08) 70%, transparent 100%);
+      animation: floatOrb2 20s ease-in-out infinite alternate;
+    }
+
+    .hero-orb-3 {
+      width: 350px;
+      height: 350px;
+      top: 30%;
+      right: 25%;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, transparent 70%);
+      animation: floatOrb3 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatOrb1 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, 40px) scale(1.15); }
+      100% { transform: translate(-30px, 70px) scale(0.9); }
+    }
+
+    @keyframes floatOrb2 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-70px, -50px) scale(1.1); }
+      100% { transform: translate(40px, -30px) scale(0.95); }
+    }
+
+    @keyframes floatOrb3 {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      50% { transform: translate(-50px, 60px) scale(1.2); opacity: 0.6; }
+      100% { transform: translate(30px, -40px) scale(0.85); opacity: 0.35; }
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 950px;
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
+    /* Pulsing Beacon Indicator */
+    .pulsing-beacon {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      box-shadow: 0 0 10px var(--accent-primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .pulsing-beacon::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-primary);
+      animation: beaconPulse 1.8s infinite ease-out;
+    }
+
+    @keyframes beaconPulse {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
     .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid var(--border-gold);
-      padding: 0.45rem 1.25rem;
+      gap: 0.65rem;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-accent, rgba(212, 175, 55, 0.3));
+      padding: 0.45rem 1.35rem;
       border-radius: var(--radius-full);
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--gold-light);
+      color: var(--accent-primary, #d4af37);
       letter-spacing: 1.5px;
       text-transform: uppercase;
       margin-bottom: 1.8rem;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
       animation: fadeInDown 0.8s ease backwards;
     }
 
+    /* Hero Structured Title */
     .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 6vw, 4.6rem);
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
       margin-bottom: 1.5rem;
+    }
+
+    .hero-title-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--accent-primary);
       text-transform: uppercase;
-      background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 75%, var(--gold-primary) 100%);
+      font-family: var(--font-sans);
+      animation: fadeInDown 0.8s ease 0.15s backwards;
+    }
+
+    .hero-title-main {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 25%, var(--gold-light) 65%, var(--gold-primary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       animation: fadeInUp 0.9s ease 0.2s backwards;
+    }
+
+    .hero-title-sub {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      color: #e2e8f0;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      animation: fadeInUp 0.9s ease 0.25s backwards;
     }
 
     .hero-subtitle {
       font-family: var(--font-editorial);
       font-style: italic;
-      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-size: clamp(1.05rem, 2.1vw, 1.35rem);
       color: #cbd5e1;
-      max-width: 760px;
+      max-width: 820px;
       line-height: 1.7;
       margin-bottom: 2.5rem;
       animation: fadeInUp 0.9s ease 0.3s backwards;
@@ -908,10 +1150,10 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
+      gap: 1.1rem;
       justify-content: center;
-      margin-bottom: 3.5rem;
-      animation: fadeInUp 0.9s ease 0.4s backwards;
+      margin-bottom: 2.2rem;
+      animation: fadeInUp 0.9s ease 0.38s backwards;
     }
 
     .btn-primary {
@@ -961,41 +1203,225 @@
       transform: translateY(-3px);
     }
 
-    /* Key Statistics Bar */
+    .btn-jatim-hero {
+      background: rgba(212, 175, 55, 0.15) !important;
+      border: 1px solid var(--accent-primary) !important;
+      color: #ffffff !important;
+    }
+
+    .btn-jatim-hero:hover {
+      background: var(--accent-primary) !important;
+      color: #07090e !important;
+      box-shadow: 0 0 25px var(--accent-glow) !important;
+    }
+
+    .btn-tertiary {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.95rem 1.8rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: var(--transition);
+    }
+
+    .btn-tertiary:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Quick Filter Chips */
+    .hero-quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.8rem;
+      animation: fadeInUp 0.9s ease 0.45s backwards;
+    }
+
+    .hero-chip-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-right: 0.3rem;
+    }
+
+    .hero-chip {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .hero-chip:hover {
+      color: #ffffff;
+      border-color: var(--accent-primary);
+      background: rgba(212, 175, 55, 0.16);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Key Statistics Cards */
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
+      gap: 1.2rem;
       width: 100%;
-      max-width: 880px;
-      padding: 1.5rem;
-      background: rgba(18, 24, 38, 0.6);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border-glass);
-      border-radius: var(--radius-md);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      max-width: 980px;
+      margin-bottom: 2rem;
       animation: fadeInUp 0.9s ease 0.5s backwards;
     }
 
-    .stat-item {
+    .stat-card {
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
+      padding: 1.4rem 1rem;
+      background: rgba(18, 24, 38, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
     }
 
-    .stat-number {
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-glow);
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-card-icon {
+      font-size: 1.25rem;
+      color: var(--accent-primary);
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .stat-card .stat-number {
       font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold-light);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 0.35rem;
     }
 
-    .stat-label {
-      font-size: 0.75rem;
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--text-muted);
-      margin-top: 0.2rem;
+      color: var(--accent-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-card .stat-sub {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      line-height: 1.3;
+    }
+
+    /* Scroll Down Indicator */
+    .hero-scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: var(--transition);
+      margin-top: 1rem;
+      animation: fadeIn 1s ease 1s backwards;
+    }
+
+    .hero-scroll-indicator:hover {
+      color: var(--accent-primary);
+    }
+
+    .scroll-mouse {
+      width: 22px;
+      height: 36px;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .scroll-wheel {
+      width: 4px;
+      height: 7px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      animation: scrollAnim 1.6s infinite ease-in-out;
+    }
+
+    @keyframes scrollAnim {
+      0% { transform: translateY(0); opacity: 1; }
+      70% { transform: translateY(12px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 0; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ==========================================================================
@@ -2252,53 +2678,88 @@
   </aside>
 
   <!-- ==========================================================================
-       HERO LANDING SECTION
+       HERO LANDING SECTION (ESTETIK, MODERN & MULTIDIMENSI)
        ========================================================================== -->
   <section class="hero-section" id="beranda">
     <div class="hero-background-art"></div>
     <div class="hero-vignette"></div>
 
+    <!-- Ambient Glowing Aurora Orbs -->
+    <div class="hero-glow-orb hero-orb-1"></div>
+    <div class="hero-glow-orb hero-orb-2"></div>
+    <div class="hero-glow-orb hero-orb-3"></div>
+
     <div class="hero-content">
       <div class="hero-pill">
-        <i class="fa-solid fa-crown"></i> Eksplorasi Mahakarya Peradaban &bull; Karya Hasina
+        <span class="pulsing-beacon"></span>
+        <i class="fa-solid fa-crown"></i>
+        <span>Eksplorasi Mahakarya Peradaban &bull; Karya Hasina</span>
       </div>
 
       <h1 class="hero-title">
-        Keajaiban Dunia & Warisan Abadi
+        <span class="hero-title-tag">ENSIKLOPEDIA MATAKARYA</span>
+        <span class="hero-title-main">KEAJAIBAN DUNIA</span>
+        <span class="hero-title-sub">& Khazanah Budaya Jawa Timur</span>
       </h1>
 
       <p class="hero-subtitle">
-        Menyingkap misteri, kejeniusan rekayasa kuno, dan pesona spiritual monumen-monumen terbesar yang pernah dipahat oleh tangan manusia di muka bumi.
+        Menyingkap rahasia megastruktur agung peradaban kuno, arsitektur monolitik dunia, serta keagungan tradisi sakral tanah Jawa Timur yang abadi melintasi zaman.
       </p>
 
       <div class="hero-actions">
-        <a href="#koleksi" class="btn-primary">
-          <i class="fa-solid fa-compass"></i> Mulai Jelajah Koleksi
+        <a href="#koleksi" class="btn-primary" onclick="switchView('wonders')">
+          <i class="fa-solid fa-compass"></i> Jelajah 14 Mahakarya
         </a>
-        <a href="#linimasa" class="btn-secondary">
-          <i class="fa-solid fa-clock-rotate-left"></i> Telusuri Linimasa
+        <a href="#jawa-timur" class="btn-secondary btn-jatim-hero" onclick="switchView('jatim')">
+          <i class="fa-solid fa-mountain-sun"></i> Khazanah Jawa Timur
+        </a>
+        <a href="#linimasa" class="btn-tertiary">
+          <i class="fa-solid fa-clock-rotate-left"></i> Linimasa Era
         </a>
       </div>
 
-      <!-- Quick Stats -->
+      <!-- Quick Filter Chips -->
+      <div class="hero-quick-chips">
+        <span class="hero-chip-label"><i class="fa-solid fa-bolt"></i> Jelajah Cepat:</span>
+        <button class="hero-chip" onclick="quickFilterFromHero('all')"><i class="fa-solid fa-globe"></i> Semua (14)</button>
+        <button class="hero-chip" onclick="quickFilterFromHero('jatim')"><i class="fa-solid fa-feather-pointed"></i> Budaya Jatim (5)</button>
+        <button class="hero-chip" onclick="quickFilterFromHero('new7')"><i class="fa-solid fa-monument"></i> 7 Keajaiban Baru</button>
+        <button class="hero-chip" onclick="quickFilterFromHero('ancient')"><i class="fa-solid fa-pyramid"></i> Kuno & Abadi</button>
+      </div>
+
+      <!-- Key Statistics Cards -->
       <div class="hero-stats">
-        <div class="stat-item">
+        <div class="stat-card">
+          <div class="stat-card-icon"><i class="fa-solid fa-monument"></i></div>
           <span class="stat-number">7+</span>
-          <span class="stat-label">Keajaiban Baru</span>
+          <span class="stat-label">Keajaiban Baru Dunia</span>
+          <span class="stat-sub">100 Juta+ Suara Global</span>
         </div>
-        <div class="stat-item">
+        <div class="stat-card">
+          <div class="stat-card-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+          <span class="stat-number">5</span>
+          <span class="stat-label">Warisan Luhur Jatim</span>
+          <span class="stat-sub">Reog, Bromo, Gandrung, Sapi</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon"><i class="fa-solid fa-hourglass-half"></i></div>
           <span class="stat-number">4.500+</span>
-          <span class="stat-label">Tahun Sejarah</span>
+          <span class="stat-label">Tahun Jejak Sejarah</span>
+          <span class="stat-sub">Dari Giza hingga Era Modern</span>
         </div>
-        <div class="stat-item">
+        <div class="stat-card">
+          <div class="stat-card-icon"><i class="fa-solid fa-earth-americas"></i></div>
           <span class="stat-number">4</span>
-          <span class="stat-label">Benua Dunia</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100M+</span>
-          <span class="stat-label">Suara Global</span>
+          <span class="stat-label">Benua Peradaban</span>
+          <span class="stat-sub">Asia, Amerika, Afrika & Eropa</span>
         </div>
       </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#koleksi" class="hero-scroll-indicator" aria-label="Gulir ke bawah">
+        <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+        <span class="scroll-label">Gulir Menuju Koleksi</span>
+      </a>
     </div>
   </section>
 
@@ -2404,6 +2865,9 @@
         <div class="tab-pills">
           <button class="tab-pill active" data-filter="all">
             <i class="fa-solid fa-globe"></i> Semua
+          </button>
+          <button class="tab-pill" data-filter="jatim">
+            <i class="fa-solid fa-feather-pointed"></i> Budaya Jatim
           </button>
           <button class="tab-pill" data-filter="new7">
             <i class="fa-solid fa-monument"></i> 7 Keajaiban Baru
@@ -2697,7 +3161,7 @@
         location: "Huairou District, Beijing",
         year: "700 SM – Abad ke-17 M",
         civilization: "Dinasti Qin, Han, & Ming",
-        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/tembok-cina.jpg",
         tag: "Benteng Raksasa",
         excerpt: "Mahakarya pertahanan militer terpanjang di dunia yang membentang lebih dari 21.000 kilometer melintasi pegunungan tandus dan gurun pasir utara Tiongkok.",
         specs: {
@@ -2734,7 +3198,7 @@
         location: "Ma'an Governorate",
         year: "± 312 SM – 100 M",
         civilization: "Kerajaan Nabatea",
-        image: "https://images.unsplash.com/photo-1579606032822-1f31f9b32e18?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/petra.jpg",
         tag: "Kota Mawar Merah",
         excerpt: "Kota metropolitan kuno yang dipahat langsung ke dalam tebing batu pasir merah muda, dengan jaringan pipa hidrolika air yang menakjubkan di tengah gurun.",
         specs: {
@@ -2772,7 +3236,7 @@
         location: "Piazza del Colosseo, Roma",
         year: "70 – 80 M",
         civilization: "Kekaisaran Romawi (Dinasti Flavia)",
-        image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/koloseum.jpg",
         tag: "Arena Para Gladiator",
         excerpt: "Amfiteater elips terbesar yang pernah dirancang di muka bumi, panggung bagi pertarungan gladiator, sandiwara mitologi, dan demonstrasi kekuatan politik Romawi.",
         specs: {
@@ -2812,7 +3276,7 @@
         location: "Semenanjung Yucatán",
         year: "± 600 – 1200 M",
         civilization: "Bangsa Maya & Toltek",
-        image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/chichen-itza.jpg",
         tag: "Piramida Astronomi",
         excerpt: "Kota suci suku Maya yang mencerminkan pemahaman astronomi yang sangat presisi melalui Piramida El Castillo dan fenomena ilusi ular berbulu Kukulkan.",
         specs: {
@@ -2851,7 +3315,7 @@
         location: "Wilayah Cusco, Lembah Suci Urubamba",
         year: "± 1450 M",
         civilization: "Kekaisaran Inka (Tahuantinsuyu)",
-        image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/machu-picchu.jpg",
         tag: "Benteng di Atas Awan",
         excerpt: "Kota tersembunyi kekaisaran Inka di lereng curam pegunungan Andes pada ketinggian 2.430 meter di atas permukaan laut, dibangun tanpa menggunakan mortar perekat.",
         specs: {
@@ -2890,7 +3354,7 @@
         location: "Tepi Sungai Yamuna, Agra, Uttar Pradesh",
         year: "1632 – 1653 M",
         civilization: "Kesultanan Mughal",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/taj-mahal.jpg",
         tag: "Simfoni Cinta Marmer Putih",
         excerpt: "Monumen cinta abadi mahakarya seni Islam-Persia-India, dibangun oleh Kaisar Shah Jahan untuk mengenang permaisuri tercintanya Mumtaz Mahal.",
         specs: {
@@ -2929,7 +3393,7 @@
         location: "Puncak Gunung Corcovado, Rio de Janeiro",
         year: "1922 – 1931 M",
         civilization: "Modern (Gerakan Seni Art Deco)",
-        image: "https://images.unsplash.com/photo-1593995863951-5e994e325888?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/kristus-penebus.jpg",
         tag: "Dekapan Perdamaian",
         excerpt: "Patung Art Deco kolosal setinggi 30 meter di puncak tebing Corcovado setinggi 710 meter, merentangkan kedua tangan menyambut dunia dengan pesan kasih dan damai.",
         specs: {
@@ -2974,7 +3438,7 @@
         location: "Magelang, Jawa Tengah",
         year: "± 750 – 825 M",
         civilization: "Wangsa Syailendra (Kerajaan Mataram Kuno)",
-        image: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/borobudur.jpg",
         tag: "Mahakarya Nusantara",
         excerpt: "Monumen candi Buddha terbesar di dunia, mahakarya mandala kosmik dengan 2.672 panel relief naratif dan 504 arca Buddha yang dipahat dari batu andesit.",
         specs: {
@@ -3018,7 +3482,7 @@
         location: "Dataran Tinggi Giza, Tepi Barat Kairo",
         year: "± 2560 SM (Dinasti ke-4)",
         civilization: "Kerajaan Mesir Kuno (Old Kingdom)",
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/giza.jpg",
         tag: "Keajaiban Kuno Terakhir",
         excerpt: "Satu-satunya dari 7 Keajaiban Dunia Kuno yang masih berdiri utuh hingga kini, monumen keabadian Firaun Khufu yang dibangun dari 2,3 juta balok batu.",
         specs: {
@@ -3063,7 +3527,7 @@
         location: "Kabupaten Ponorogo",
         year: "Abad ke-15 M",
         civilization: "Kultur Ponorogo / Kerajaan Bantarangin",
-        image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/reog-ponorogo.jpg",
         tag: "Seni Topeng Sakral",
         excerpt: "Seni pertunjukan teater tari kolosal tertua di Nusantara, menampilkan Singo Barong seberat 50 kg yang diangkat hanya dengan gigitan gigi, berpadu dengan kesaktian Warok dan kelincahan Jatil.",
         specs: {
@@ -3110,7 +3574,7 @@
         location: "Kawah Gunung Bromo, Kaldera Tengger",
         year: "Abad ke-14 M – Sekarang",
         civilization: "Masyarakat Adat Suku Tengger (Hindu Dharma)",
-        image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/yadnya-kasada.jpg",
         tag: "Ritual Sakral Gunung Api",
         excerpt: "Tradisi persembahan sakral suku Tengger keturunan Majapahit yang melarung hasil bumi dan ternak ke dalam kawah aktif Gunung Bromo di tengah keheningan malam purnama bulan Kasada.",
         specs: {
@@ -3151,7 +3615,7 @@
         location: "Kabupaten Banyuwangi (Bumi Blambangan)",
         year: "± 1770 M (Era Pasca Perang Bayu)",
         civilization: "Suku Osing Blambangan",
-        image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/tari-gandrung.jpg",
         tag: "Tarian Dewi Kesuburan & Pejuang",
         excerpt: "Ikon budaya Bumi Blambangan dengan mahkota Omprok keemasan bertatah kulit kerbau, bermula dari tarian pemujaan Dewi Sri hingga sandi spionase perjuangan rakyat Blambangan.",
         specs: {
@@ -3188,7 +3652,7 @@
         location: "Pulau Madura (Bangkalan, Sampang, Pamekasan, Sumenep)",
         year: "Abad ke-13 M",
         civilization: "Kultur Agraris Tradisional Madura",
-        image: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/karapan-sapi.jpg",
         tag: "Pacuan Prestisius Nusantara",
         excerpt: "Adu pacu sepasang sapi jantan perkasa melesat di lintasan tanah 100 meter dalam hitungan detik, simbol kebanggaan, prestise harga diri, dan ketangguhan etos kerja Madura.",
         specs: {
@@ -3230,7 +3694,7 @@
         location: "Trowulan (Mojokerto) & Candi Penataran (Blitar)",
         year: "1293 – 1527 M",
         civilization: "Kemaharajaan Maritim Majapahit",
-        image: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1200&q=80",
+        image: "assets/kejayaan-majapahit.jpg",
         tag: "Poros Kemaharajaan Nusantara",
         excerpt: "Pusat imperium adidaya Asia Tenggara yang mempersatukan Nusantara dengan Sumpah Palapa Gajah Mada, melahirkan rekayasa arsitektur bata merah dan semboyan suci Bhinneka Tunggal Ika.",
         specs: {
@@ -3467,6 +3931,41 @@
     document.getElementById('wonder-search').addEventListener('input', (e) => {
       renderCards(currentFilter, e.target.value);
     });
+    /* Quick Filter dari Hero Section */
+    function quickFilterFromHero(category) {
+      currentFilter = category;
+      tabPills.forEach(p => {
+        if (p.getAttribute('data-filter') === category) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+      const searchBox = document.getElementById('wonder-search');
+      const searchVal = searchBox ? searchBox.value : '';
+      renderCards(currentFilter, searchVal);
+      const target = document.getElementById('koleksi');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    /* Toast Notification Ringan */
+    function showToast(message, iconClass = 'fa-leaf') {
+      let toast = document.getElementById('nature-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'nature-toast';
+        toast.className = 'sync-toast';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<i class="fa-solid ${iconClass}"></i> <span>${message}</span>`;
+      toast.classList.add('active');
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 2800);
+    }
+
 
     /* --------------------------------------------------------------------------
        BOOKMARKS SYSTEM (LOCALSTORAGE)
@@ -3823,14 +4322,48 @@
     });
 
     /* --------------------------------------------------------------------------
-       AMBIENT SOUND GENERATOR (Web Audio API Synthesizer - Works Offline!)
+       NATURAL AMBIENT SOUND GENERATOR (Web Audio API - 100% Offline Nature Sound)
+       Suara Alam Natural: Gemericik Aliran Sungai Pegunungan & Semilir Angin Hutan
        -------------------------------------------------------------------------- */
     let audioCtx = null;
     let isSoundOn = false;
-    let osc1, osc2, gainNode;
+    let natureNoiseSource = null;
+    let streamFilter = null;
+    let streamGain = null;
+    let streamLfo = null;
+    let streamLfoGain = null;
+    let windFilter = null;
+    let windGain = null;
+    let windLfo = null;
+    let windLfoGain = null;
+    let trickleFilter = null;
+    let trickleGain = null;
+    let natureMasterGain = null;
 
     const soundBtn = document.getElementById('sound-toggle-btn');
     const soundIcon = document.getElementById('sound-icon');
+
+    // Menghasilkan buffer white-pink noise secara dinamis untuk suara gemericik air alami
+    function generatePinkNoiseBuffer(ctx, duration = 4.0) {
+      const bufferSize = Math.floor(ctx.sampleRate * duration);
+      const buffer = ctx.createBuffer(2, bufferSize, ctx.sampleRate);
+      for (let channel = 0; channel < 2; channel++) {
+        const output = buffer.getChannelData(channel);
+        let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          b0 = 0.99886 * b0 + white * 0.0555179;
+          b1 = 0.99332 * b1 + white * 0.0750759;
+          b2 = 0.96900 * b2 + white * 0.1538520;
+          b3 = 0.86650 * b3 + white * 0.3104856;
+          b4 = 0.55000 * b4 + white * 0.5329522;
+          b5 = -0.7616 * b5 - white * 0.0168980;
+          output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.12;
+          b6 = white * 0.115926;
+        }
+      }
+      return buffer;
+    }
 
     function toggleAmbientSound() {
       if (!audioCtx) {
@@ -3838,41 +4371,101 @@
       }
 
       if (isSoundOn) {
-        gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.5);
+        // Smooth fade out
+        if (natureMasterGain) {
+          natureMasterGain.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.35);
+        }
         setTimeout(() => {
-          if (osc1) osc1.stop();
-          if (osc2) osc2.stop();
-        }, 500);
-        isSoundOn = false;
+          try {
+            if (natureNoiseSource) natureNoiseSource.stop();
+            if (streamLfo) streamLfo.stop();
+            if (windLfo) windLfo.stop();
+          } catch (e) {}
+          natureNoiseSource = null;
+          isSoundOn = false;
+        }, 400);
         soundIcon.className = 'fa-solid fa-volume-xmark';
+        soundBtn.title = 'Nyalakan Suara Alam Alami';
+        showToast('Suara alam dinonaktifkan', 'fa-volume-xmark');
       } else {
-        audioCtx.resume();
-        osc1 = audioCtx.createOscillator();
-        osc2 = audioCtx.createOscillator();
-        gainNode = audioCtx.createGain();
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
 
-        // Harmonics for a calming temple drone (A2 110Hz + E3 165Hz)
-        osc1.type = 'sine';
-        osc1.frequency.setValueAtTime(110, audioCtx.currentTime);
-        osc2.type = 'triangle';
-        osc2.frequency.setValueAtTime(165, audioCtx.currentTime);
+        // Master Gain
+        natureMasterGain = audioCtx.createGain();
+        natureMasterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        natureMasterGain.gain.exponentialRampToValueAtTime(0.38, audioCtx.currentTime + 1.6);
+        natureMasterGain.connect(audioCtx.destination);
 
-        const filter = audioCtx.createBiquadFilter();
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(350, audioCtx.currentTime);
+        // Continuous Organic Noise Buffer
+        const noiseBuf = generatePinkNoiseBuffer(audioCtx, 4.0);
+        natureNoiseSource = audioCtx.createBufferSource();
+        natureNoiseSource.buffer = noiseBuf;
+        natureNoiseSource.loop = true;
 
-        osc1.connect(filter);
-        osc2.connect(filter);
-        filter.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
+        // 1. Layer Aliran Air Sungai Pegunungan (River Stream Filter)
+        streamFilter = audioCtx.createBiquadFilter();
+        streamFilter.type = 'bandpass';
+        streamFilter.frequency.setValueAtTime(640, audioCtx.currentTime);
+        streamFilter.Q.setValueAtTime(1.8, audioCtx.currentTime);
 
-        gainNode.gain.setValueAtTime(0.001, audioCtx.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 2);
+        streamGain = audioCtx.createGain();
+        streamGain.gain.setValueAtTime(0.55, audioCtx.currentTime);
 
-        osc1.start();
-        osc2.start();
+        // LFO moduler arus air
+        streamLfo = audioCtx.createOscillator();
+        streamLfoGain = audioCtx.createGain();
+        streamLfo.frequency.setValueAtTime(0.24, audioCtx.currentTime);
+        streamLfoGain.gain.setValueAtTime(180, audioCtx.currentTime);
+        streamLfo.connect(streamLfoGain);
+        streamLfoGain.connect(streamFilter.frequency);
+        streamLfo.start();
+
+        natureNoiseSource.connect(streamFilter);
+        streamFilter.connect(streamGain);
+        streamGain.connect(natureMasterGain);
+
+        // 2. Layer Angin Lembah Semilir (Mountain Breeze Filter)
+        windFilter = audioCtx.createBiquadFilter();
+        windFilter.type = 'lowpass';
+        windFilter.frequency.setValueAtTime(280, audioCtx.currentTime);
+        windFilter.Q.setValueAtTime(2.2, audioCtx.currentTime);
+
+        windGain = audioCtx.createGain();
+        windGain.gain.setValueAtTime(0.42, audioCtx.currentTime);
+
+        // LFO hembusan angin panjang
+        windLfo = audioCtx.createOscillator();
+        windLfoGain = audioCtx.createGain();
+        windLfo.frequency.setValueAtTime(0.08, audioCtx.currentTime);
+        windLfoGain.gain.setValueAtTime(130, audioCtx.currentTime);
+        windLfo.connect(windLfoGain);
+        windLfoGain.connect(windFilter.frequency);
+        windLfo.start();
+
+        natureNoiseSource.connect(windFilter);
+        windFilter.connect(windGain);
+        windGain.connect(natureMasterGain);
+
+        // 3. Layer Gemericik Air Jernih (Spring Trickle Sparkle)
+        trickleFilter = audioCtx.createBiquadFilter();
+        trickleFilter.type = 'bandpass';
+        trickleFilter.frequency.setValueAtTime(1800, audioCtx.currentTime);
+        trickleFilter.Q.setValueAtTime(4.0, audioCtx.currentTime);
+
+        trickleGain = audioCtx.createGain();
+        trickleGain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+
+        natureNoiseSource.connect(trickleFilter);
+        trickleFilter.connect(trickleGain);
+        trickleGain.connect(natureMasterGain);
+
+        natureNoiseSource.start();
         isSoundOn = true;
-        soundIcon.className = 'fa-solid fa-volume-high';
+        soundIcon.className = 'fa-solid fa-water';
+        soundBtn.title = 'Suara Alam Alami Aktif (Klik untuk Matikan)';
+        showToast('Suara Alam Natural Aktif: Gemericik Air & Angin Pegunungan 🌿🌊', 'fa-water');
       }
     }
 
