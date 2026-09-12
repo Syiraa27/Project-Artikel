@@ -1,0 +1,4015 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="author" content="Hasina" />
+  <meta name="creator" content="Hasina" />
+  <title>HASINA — Eksplorasi Keajaiban Dunia & Keunikan Budaya Jawa Timur</title>
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ==========================================================================
+       VARIABLES & PALET WARNA DINAMIS (Light / Dark & Pastel Themes)
+       ========================================================================== */
+    :root {
+      /* Dynamic Accent Palette (Default: Imperial Gold) */
+      --accent-primary: #d4af37;
+      --accent-light: #f5df88;
+      --accent-dark: #aa820a;
+      --accent-glow: rgba(212, 175, 55, 0.35);
+      --border-accent: rgba(212, 175, 55, 0.28);
+
+      /* Compatibility Aliases */
+      --gold-primary: var(--accent-primary);
+      --gold-light: var(--accent-light);
+      --gold-dark: var(--accent-dark);
+      --gold-glow: var(--accent-glow);
+      --border-gold: var(--border-accent);
+
+      /* Base Dark Mode */
+      --bg-dark: #07090e;
+      --bg-surface: #0e131f;
+      --bg-card: rgba(18, 24, 38, 0.85);
+      --bg-card-hover: rgba(26, 34, 53, 0.98);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --modal-bg: #0d121d;
+      --modal-border: var(--border-accent);
+      --drawer-bg: rgba(14, 19, 31, 0.98);
+      --hero-overlay-bg: radial-gradient(circle at center, rgba(14, 19, 31, 0.2) 0%, rgba(7, 9, 14, 0.95) 85%);
+      --header-bg-scrolled: rgba(7, 9, 14, 0.88);
+      --dropdown-bg: rgba(14, 19, 31, 0.98);
+      --highlight-bg: rgba(212, 175, 55, 0.08);
+      --accent-cyan: #38bdf8;
+      --accent-ruby: #f43f5e;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --font-display: 'Cinzel', serif;
+      --font-editorial: 'Playfair Display', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* LIGHT MODE STYLING */
+    [data-theme="light"] {
+      --bg-dark: #f4f6fb;
+      --bg-surface: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --bg-card-hover: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      --border-glass: rgba(0, 0, 0, 0.09);
+      --modal-bg: #ffffff;
+      --modal-border: var(--border-accent);
+      --drawer-bg: rgba(255, 255, 255, 0.98);
+      --hero-overlay-bg: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, rgba(244, 246, 251, 0.97) 85%);
+      --header-bg-scrolled: rgba(255, 255, 255, 0.92);
+      --dropdown-bg: rgba(255, 255, 255, 0.98);
+      --highlight-bg: rgba(0, 0, 0, 0.04);
+    }
+
+    [data-theme="light"] body {
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(0, 0, 0, 0.02) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+    }
+
+    [data-theme="light"] .hero-title {
+      background: linear-gradient(135deg, #0f172a 35%, var(--accent-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .hero-subtitle,
+    [data-theme="light"] .modal-text-block,
+    [data-theme="light"] .fact-text {
+      color: #334155;
+    }
+
+    [data-theme="light"] .section-title,
+    [data-theme="light"] .card-title,
+    [data-theme="light"] .modal-title,
+    [data-theme="light"] .interactive-title,
+    [data-theme="light"] .timeline-title,
+    [data-theme="light"] .quiz-question-box {
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .card-media-overlay {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    [data-theme="light"] .card-specs,
+    [data-theme="light"] .fact-display-area {
+      background: rgba(241, 245, 249, 0.85);
+      border-color: rgba(0, 0, 0, 0.07);
+    }
+
+    [data-theme="light"] .spec-value {
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .search-box input {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .quiz-opt-btn {
+      background: rgba(241, 245, 249, 0.7);
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .highlight-box {
+      color: #1e293b;
+    }
+
+    [data-theme="light"] footer.main-footer {
+      background: #eef2f7;
+    }
+
+    [data-theme="light"] .footer-col h4 {
+      color: #0f172a;
+    }
+
+    /* ==========================================================================
+       PALET WARNA AKSEN PASTEL PILIHAN USER
+       ========================================================================== */
+    /* 1. Sakura Rose */
+    [data-pastel="sakura"] {
+      --accent-primary: #f472b6;
+      --accent-light: #fbcfe8;
+      --accent-dark: #db2777;
+      --accent-glow: rgba(244, 114, 182, 0.4);
+      --border-accent: rgba(244, 114, 182, 0.35);
+    }
+
+    /* 2. Matcha Sage */
+    [data-pastel="sage"] {
+      --accent-primary: #34d399;
+      --accent-light: #a7f3d0;
+      --accent-dark: #059669;
+      --accent-glow: rgba(52, 211, 153, 0.4);
+      --border-accent: rgba(52, 211, 153, 0.35);
+    }
+
+    /* 3. Lilac Lavender */
+    [data-pastel="lavender"] {
+      --accent-primary: #a78bfa;
+      --accent-light: #ddd6fe;
+      --accent-dark: #7c3aed;
+      --accent-glow: rgba(167, 139, 250, 0.4);
+      --border-accent: rgba(167, 139, 250, 0.35);
+    }
+
+    /* 4. Pastel Peach */
+    [data-pastel="peach"] {
+      --accent-primary: #fb923c;
+      --accent-light: #fed7aa;
+      --accent-dark: #ea580c;
+      --accent-glow: rgba(251, 146, 60, 0.4);
+      --border-accent: rgba(251, 146, 60, 0.35);
+    }
+
+    /* 5. Sky Azure */
+    [data-pastel="sky"] {
+      --accent-primary: #38bdf8;
+      --accent-light: #bae6fd;
+      --accent-dark: #0284c7;
+      --accent-glow: rgba(56, 189, 248, 0.4);
+      --border-accent: rgba(56, 189, 248, 0.35);
+    }
+
+    /* 6. Imperial Gold (Default) */
+    [data-pastel="gold"] {
+      --accent-primary: #d4af37;
+      --accent-light: #f5df88;
+      --accent-dark: #aa820a;
+      --accent-glow: rgba(212, 175, 55, 0.35);
+      --border-accent: rgba(212, 175, 55, 0.28);
+    }
+
+    /* ==========================================================================
+       GLOBAL RESETS & BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232b3e;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-primary);
+    }
+
+    /* Reading Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-light));
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    header.main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.1rem 2rem;
+      transition: var(--transition);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+    }
+
+    header.main-header.scrolled {
+      background: rgba(7, 9, 14, 0.85);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 0.8rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-dark);
+      font-size: 1.15rem;
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(120deg, #ffffff, var(--gold-light), var(--gold-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-subtitle {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+    }
+
+    nav.desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    nav.desktop-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    nav.desktop-nav a:hover,
+    nav.desktop-nav a.active {
+      color: var(--gold-light);
+    }
+
+    nav.desktop-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gold-primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    nav.desktop-nav a:hover::after,
+    nav.desktop-nav a.active::after {
+      width: 100%;
+    }
+
+    /* Dropdown Submenu Jawa Timur */
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-dropdown .dropdown-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      padding: 0.4rem 0;
+    }
+
+    .nav-dropdown .dropdown-trigger .dropdown-arrow {
+      font-size: 0.65rem;
+      transition: transform 0.3s ease;
+      color: var(--gold-primary);
+    }
+
+    .nav-dropdown:hover .dropdown-trigger .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px);
+      background: rgba(14, 19, 31, 0.98);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 0.8rem 0.6rem;
+      min-width: 300px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      z-index: 1200;
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateX(-50%) translateY(6px);
+    }
+
+    .dropdown-header-title {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-primary);
+      padding: 0.3rem 0.6rem 0.5rem;
+      border-bottom: 1px solid var(--border-glass);
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-dropdown .dropdown-menu a {
+      color: var(--text-main) !important;
+      text-decoration: none;
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+    }
+
+    .nav-dropdown .dropdown-menu a::after {
+      display: none !important;
+    }
+
+    .nav-dropdown .dropdown-menu a:hover {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: var(--border-gold);
+      transform: translateX(3px);
+    }
+
+    .nav-dropdown .dropdown-menu a .item-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .nav-dropdown .dropdown-menu a .item-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-dropdown .dropdown-menu a .item-info strong {
+      font-size: 0.85rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .nav-dropdown .dropdown-menu a .item-info small {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.2;
+    }
+
+    /* ==========================================================================
+       SUBMENU NAVIGASI TAMPILAN (ANTI-LONG SCROLL VIEW SWITCHER)
+       ========================================================================== */
+    .view-switcher-container {
+      max-width: 1100px;
+      margin: -2.5rem auto 2.5rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .view-switch-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-full);
+      padding: 0.45rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      flex-wrap: wrap;
+    }
+
+    .view-tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .view-tab-btn i {
+      color: var(--gold-primary);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .view-tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .view-tab-btn.active {
+      background: var(--gold-primary);
+      color: #07090e !important;
+      border-color: var(--gold-primary);
+      box-shadow: 0 4px 15px var(--gold-glow);
+    }
+
+    .view-tab-btn.active i {
+      color: #07090e !important;
+    }
+
+    .view-panel {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .view-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       MODAL PILIHAN WARNA PASTEL & MODE TEMA
+       ========================================================================== */
+    .theme-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 3500;
+      background: rgba(5, 7, 11, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .theme-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 480px;
+      padding: 2.2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px var(--gold-glow);
+      position: relative;
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .theme-modal.active .theme-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .theme-mode-toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    .mode-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 0.9rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+
+    .mode-btn:hover {
+      border-color: var(--gold-primary);
+    }
+
+    .mode-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+
+    .pastel-swatches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .pastel-swatch-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 0.8rem 0.5rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .pastel-swatch-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .pastel-swatch-btn.active {
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.12);
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .color-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .swatch-name {
+      font-size: 0.76rem;
+      color: var(--text-main);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--border-gold);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .badge-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--accent-ruby);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 82%;
+      max-width: 320px;
+      height: 100vh;
+      background: rgba(14, 19, 31, 0.98);
+      backdrop-filter: blur(25px);
+      z-index: 2000;
+      padding: 2.5rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 1px solid var(--border-glass);
+      box-shadow: -10px 0 40px rgba(0,0,0,0.8);
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .drawer-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.6rem 0;
+      border-radius: var(--radius-sm);
+    }
+
+    .drawer-links a i {
+      color: var(--gold-primary);
+      width: 24px;
+    }
+
+    /* ==========================================================================
+       HERO & LANDING SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 1.5rem 4rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-background-art {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at center, rgba(14, 19, 31, 0.2) 0%, rgba(7, 9, 14, 0.95) 85%),
+        url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+      filter: brightness(0.35) contrast(1.1);
+      transform: scale(1.05);
+      animation: heroZoom 24s infinite alternate ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes heroZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.08); }
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(7, 9, 14, 0.9) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 950px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-gold);
+      padding: 0.45rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+      animation: fadeInDown 0.8s ease backwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 75%, var(--gold-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInUp 0.9s ease 0.2s backwards;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      color: #cbd5e1;
+      max-width: 760px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.9s ease 0.3s backwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+      animation: fadeInUp 0.9s ease 0.4s backwards;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #07090e;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.95rem 2.2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.95rem 2.2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+
+    /* Key Statistics Bar */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 880px;
+      padding: 1.5rem;
+      background: rgba(18, 24, 38, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 0.9s ease 0.5s backwards;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       DISCOVERY FILTER & SEARCH CONTROLS
+       ========================================================================== */
+    .control-section {
+      padding: 2.5rem 1.5rem 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .filter-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      background: var(--bg-surface);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-glass);
+    }
+
+    .tab-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tab-pill {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 0.5rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tab-pill:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .tab-pill.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--border-gold);
+      color: var(--gold-light);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 280px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: rgba(7, 9, 14, 0.6);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 0.6rem 1rem 0.6rem 2.6rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-box input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       ARTICLES & CARDS SHOWCASE (GRID)
+       ========================================================================== */
+    .showcase-section {
+      padding: 2.5rem 1.5rem 6rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-badge {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .wonder-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      backdrop-filter: blur(12px);
+    }
+
+    .wonder-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-gold);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.12);
+      background: var(--bg-card-hover);
+    }
+
+    .card-media {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .wonder-card:hover .card-media img {
+      transform: scale(1.08);
+    }
+
+    .card-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(14, 19, 31, 0.95) 100%);
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(7, 9, 14, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-glass);
+      color: var(--gold-light);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-bookmark-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      background: rgba(7, 9, 14, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-full);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .card-bookmark-btn:hover,
+    .card-bookmark-btn.saved {
+      color: var(--gold-primary);
+      border-color: var(--gold-primary);
+      transform: scale(1.1);
+    }
+
+    .card-location {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card-body {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-era-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--gold-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-excerpt {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      padding: 0.9rem;
+      background: rgba(7, 9, 14, 0.4);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.4rem;
+      border: 1px solid var(--border-glass);
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 1.2rem;
+    }
+
+    .btn-read-more {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .btn-read-more:hover {
+      color: #ffffff;
+      gap: 0.8rem;
+    }
+
+    .share-pill {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .share-pill:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* ==========================================================================
+       TIMELINE SECTION (CHRONOLOGICAL ODYSSEY)
+       ========================================================================== */
+    .timeline-section {
+      padding: 5rem 1.5rem;
+      background: linear-gradient(180deg, transparent, rgba(14, 19, 31, 0.8), transparent);
+      position: relative;
+    }
+
+    .timeline-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, var(--gold-primary), transparent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 3rem;
+      position: relative;
+      margin-bottom: 3.5rem;
+      width: 50%;
+    }
+
+    .timeline-item:nth-child(even) {
+      align-self: flex-end;
+      margin-left: auto;
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: 3rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      right: -8px;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: var(--radius-full);
+      background: var(--gold-primary);
+      border: 3px solid var(--bg-dark);
+      box-shadow: 0 0 10px var(--gold-glow);
+      z-index: 2;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      right: auto;
+      left: -8px;
+    }
+
+    .timeline-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(10px);
+      max-width: 440px;
+      transition: var(--transition);
+    }
+
+    .timeline-box:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE QUIZ & RANDOM FACT GENERATOR
+       ========================================================================== */
+    .interactive-hub {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+    }
+
+    .interactive-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      backdrop-filter: blur(15px);
+      position: relative;
+    }
+
+    .interactive-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .interactive-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Quiz Widget */
+    .quiz-question-box {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-glass);
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      text-align: left;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .quiz-opt-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border-gold);
+    }
+
+    .quiz-opt-btn.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: #22c55e;
+      color: #86efac;
+    }
+
+    .quiz-opt-btn.wrong {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+      color: #fca5a5;
+    }
+
+    .quiz-feedback {
+      font-size: 0.88rem;
+      padding: 0.9rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.2rem;
+      display: none;
+    }
+
+    /* Random Fact Generator */
+    .fact-display-area {
+      background: rgba(7, 9, 14, 0.5);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .fact-icon {
+      font-size: 2.2rem;
+      color: var(--gold-primary);
+      margin-bottom: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .fact-text {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #e2e8f0;
+    }
+
+    .btn-shuffle-fact {
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .btn-shuffle-fact:hover {
+      background: var(--gold-primary);
+      color: var(--bg-dark);
+    }
+
+    /* ==========================================================================
+       MODAL DEEP-DIVE ARTICLE READER
+       ========================================================================== */
+    .article-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(5, 7, 11, 0.85);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .article-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-sheet {
+      background: #0d121d;
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 860px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+      position: relative;
+      transform: translateY(30px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .article-modal.active .modal-sheet {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close-btn {
+      position: sticky;
+      top: 1rem;
+      right: 1rem;
+      float: right;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      background: rgba(14, 19, 31, 0.85);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-full);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      background: var(--accent-ruby);
+      transform: rotate(90deg);
+    }
+
+    .modal-hero-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .modal-content-inner {
+      padding: 2.5rem;
+    }
+
+    .modal-header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .modal-badge {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px solid var(--border-gold);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .modal-location-sub {
+      color: var(--gold-light);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-text-block {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .modal-text-block h3 {
+      font-family: var(--font-display);
+      color: #ffffff;
+      font-size: 1.35rem;
+      margin: 1.8rem 0 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .modal-text-block h3 i {
+      color: var(--gold-primary);
+      font-size: 1.1rem;
+    }
+
+    .highlight-box {
+      background: rgba(212, 175, 55, 0.06);
+      border-left: 3px solid var(--gold-primary);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #f1f5f9;
+    }
+
+    /* ==========================================================================
+       BOOKMARK SIDEBAR DRAWER
+       ========================================================================== */
+    .bookmarks-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 380px;
+      height: 100vh;
+      background: rgba(14, 19, 31, 0.98);
+      backdrop-filter: blur(25px);
+      z-index: 2500;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -15px 0 40px rgba(0, 0, 0, 0.85);
+      border-left: 1px solid var(--border-glass);
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bookmarks-drawer.open {
+      right: 0;
+    }
+
+    .bookmarks-list {
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .bookmark-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-glass);
+    }
+
+    .bookmark-thumb {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+    }
+
+    .bookmark-info h5 {
+      font-size: 0.9rem;
+      color: white;
+      margin-bottom: 0.2rem;
+    }
+
+    .bookmark-info p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer.main-footer {
+      background: #05070a;
+      border-top: 1px solid var(--border-glass);
+      padding: 5rem 1.5rem 2.5rem;
+      position: relative;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-quote {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin: 1.2rem 0;
+    }
+
+    .footer-author {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Floating Ambient Sound Button & Scroll Top */
+    .floating-fab-group {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      z-index: 1500;
+    }
+
+    .fab-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: rgba(14, 19, 31, 0.85);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+    }
+
+    .fab-btn:hover {
+      transform: scale(1.1);
+      background: var(--gold-primary);
+      color: var(--bg-dark);
+    }
+
+    /* Floating Author Watermark */
+    .author-watermark {
+      position: fixed;
+      bottom: 1.8rem;
+      left: 1.8rem;
+      z-index: 1200;
+      background: rgba(14, 19, 31, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-gold);
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .author-watermark:hover {
+      background: rgba(26, 34, 53, 0.98);
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--gold-glow);
+    }
+
+    @media (max-width: 600px) {
+      .author-watermark {
+        bottom: 1rem;
+        left: 1rem;
+        font-size: 0.72rem;
+        padding: 0.35rem 0.8rem;
+      }
+    }
+
+    /* ==========================================================================
+       KEYFRAME ANIMATIONS
+       ========================================================================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE ADAPTATIONS (MOBILE & TABLET)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .interactive-hub {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav.desktop-nav {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .timeline-line {
+        left: 20px;
+      }
+      .timeline-item, .timeline-item:nth-child(even) {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+        justify-content: flex-start;
+      }
+      .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
+        left: 12px;
+        right: auto;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .modal-content-inner {
+        padding: 1.5rem;
+      }
+      .modal-hero-img {
+        height: 220px;
+      }
+    }
+
+    /* Auto-Sync Toast Notification */
+    .sync-toast {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: var(--bg-surface);
+      border: 1px solid var(--accent-primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+      color: var(--text-main);
+      padding: 0.8rem 1.4rem;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 10000;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .sync-toast.active {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sync-toast i {
+      color: var(--accent-primary);
+      animation: spin-sync 2s linear infinite;
+    }
+    @keyframes spin-sync {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Header / Navigation -->
+  <header class="main-header" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo-brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">HASINA</span>
+          <span class="logo-subtitle">Wonders & Cultural Heritage</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation dengan Submenu Terstruktur -->
+      <nav class="desktop-nav">
+        <!-- Submenu 1: Keajaiban Dunia -->
+        <div class="nav-dropdown">
+          <a href="#koleksi" class="dropdown-trigger" onclick="switchView('wonders')">
+            <i class="fa-solid fa-monument" style="color: var(--gold-primary); font-size: 0.82rem;"></i>
+            <span>Keajaiban Dunia</span>
+            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-header-title">
+              <i class="fa-solid fa-globe"></i> Monumen Dunia Pilihan
+            </div>
+            <a href="#koleksi" onclick="switchView('wonders'); openModal('tembok-cina')">
+              <div class="item-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="item-info"><strong>Tembok Besar Cina</strong><small>Benteng Raksasa 21.000 Km</small></div>
+            </a>
+            <a href="#koleksi" onclick="switchView('wonders'); openModal('petra')">
+              <div class="item-icon"><i class="fa-solid fa-gem"></i></div>
+              <div class="item-info"><strong>Kota Batu Petra</strong><small>Kota Mawar Merah Yordania</small></div>
+            </a>
+            <a href="#koleksi" onclick="switchView('wonders'); openModal('koloseum')">
+              <div class="item-icon"><i class="fa-solid fa-dungeon"></i></div>
+              <div class="item-info"><strong>Koloseum Roma</strong><small>Arena Gladiator Kekaisaran Romawi</small></div>
+            </a>
+            <a href="#koleksi" onclick="switchView('wonders'); openModal('taj-mahal')">
+              <div class="item-icon"><i class="fa-solid fa-heart"></i></div>
+              <div class="item-info"><strong>Taj Mahal India</strong><small>Mahakarya Cinta Marmer Putih</small></div>
+            </a>
+            <a href="#koleksi" onclick="switchView('wonders'); openModal('borobudur')">
+              <div class="item-icon"><i class="fa-solid fa-dharmachakra"></i></div>
+              <div class="item-info"><strong>Candi Borobudur</strong><small>Mandala Buddha Terbesar di Dunia</small></div>
+            </a>
+            <a href="#koleksi" onclick="switchView('wonders'); openModal('giza')">
+              <div class="item-icon"><i class="fa-solid fa-pyramid"></i></div>
+              <div class="item-info"><strong>Piramida Giza</strong><small>Satu-satunya Keajaiban Kuno Tersisa</small></div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Submenu 2: Keunikan Jawa Timur -->
+        <div class="nav-dropdown">
+          <a href="#jawa-timur" class="dropdown-trigger" onclick="switchView('jatim')">
+            <i class="fa-solid fa-feather-pointed" style="color: var(--gold-primary); font-size: 0.82rem;"></i>
+            <span>Budaya Jawa Timur</span>
+            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-header-title">
+              <i class="fa-solid fa-landmark"></i> Tradisi Luhur Jawa Timur
+            </div>
+            <a href="#jawa-timur" onclick="switchView('jatim'); openModal('reog-ponorogo')">
+              <div class="item-icon"><i class="fa-solid fa-mask"></i></div>
+              <div class="item-info"><strong>Reog Ponorogo</strong><small>Topeng Singo Barong 50 Kg & Warok</small></div>
+            </a>
+            <a href="#jawa-timur" onclick="switchView('jatim'); openModal('yadnya-kasada')">
+              <div class="item-icon"><i class="fa-solid fa-volcano"></i></div>
+              <div class="item-info"><strong>Yadnya Kasada Bromo</strong><small>Ritual Sakral Suku Tengger</small></div>
+            </a>
+            <a href="#jawa-timur" onclick="switchView('jatim'); openModal('tari-gandrung')">
+              <div class="item-icon"><i class="fa-solid fa-fan"></i></div>
+              <div class="item-info"><strong>Tari Gandrung Banyuwangi</strong><small>Tarian Dewi Sri & Pejuang Blambangan</small></div>
+            </a>
+            <a href="#jawa-timur" onclick="switchView('jatim'); openModal('karapan-sapi')">
+              <div class="item-icon"><i class="fa-solid fa-horse"></i></div>
+              <div class="item-info"><strong>Karapan Sapi Madura</strong><small>Pacuan Prestisius & Kebanggaan</small></div>
+            </a>
+            <a href="#jawa-timur" onclick="switchView('jatim'); openModal('kejayaan-majapahit')">
+              <div class="item-icon"><i class="fa-solid fa-crown"></i></div>
+              <div class="item-info"><strong>Kemegahan Majapahit</strong><small>Candi Penataran & Ibukota Trowulan</small></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Submenu 3: Eksplorasi & Kuis -->
+        <div class="nav-dropdown">
+          <a href="#linimasa" class="dropdown-trigger">
+            <i class="fa-solid fa-compass" style="color: var(--gold-primary); font-size: 0.82rem;"></i>
+            <span>Aktivitas & Kuis</span>
+            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-header-title">
+              <i class="fa-solid fa-brain"></i> Eksplorasi Interaktif
+            </div>
+            <a href="#linimasa" onclick="switchView('timeline')">
+              <div class="item-icon"><i class="fa-solid fa-timeline"></i></div>
+              <div class="item-info"><strong>Linimasa Sejarah</strong><small>Kronologi Peradaban 2560 SM - Modern</small></div>
+            </a>
+            <a href="#kuis" onclick="switchView('interactive')">
+              <div class="item-icon"><i class="fa-solid fa-circle-question"></i></div>
+              <div class="item-info"><strong>Kuis Wawasan</strong><small>Uji Pengetahuan Sejarah & Budaya</small></div>
+            </a>
+            <a href="#fakta" onclick="switchView('interactive')">
+              <div class="item-icon"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="item-info"><strong>Tahukah Kamu?</strong><small>Fakta Unik & Rahasia Menakjubkan</small></div>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Quick Light / Dark Mode Toggle -->
+        <button class="icon-btn" id="theme-toggle" title="Ganti Mode Terang / Gelap">
+          <i class="fa-solid fa-moon" id="theme-toggle-icon"></i>
+        </button>
+
+        <!-- Pastel Palette Modal Trigger -->
+        <button class="icon-btn" id="palette-trigger-btn" title="Pilihan Palet Warna Pastel">
+          <i class="fa-solid fa-palette"></i>
+        </button>
+
+        <!-- Bookmarks Trigger -->
+        <button class="icon-btn" id="bookmark-drawer-btn" title="Daftar Simpanan">
+          <i class="fa-solid fa-bookmark"></i>
+          <span class="badge-count" id="bookmark-badge">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="icon-btn mobile-menu-btn" id="mobile-toggle" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="logo-brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+        <span class="logo-title">HASINA</span>
+      </div>
+      <button class="icon-btn" id="drawer-close" aria-label="Tutup Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="#koleksi" class="drawer-nav-item" onclick="switchView('wonders')"><i class="fa-solid fa-landmark-dome"></i> 7 Keajaiban Dunia</a>
+      
+      <!-- Submenu Jawa Timur di Mobile -->
+      <div style="background: rgba(212, 175, 55, 0.06); border: 1px solid var(--border-gold); border-radius: var(--radius-sm); padding: 0.6rem 0.8rem; margin: 0.2rem 0;">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-light); font-weight: 700; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+          <i class="fa-solid fa-gem" style="color: var(--gold-primary);"></i> Keunikan Jawa Timur
+        </div>
+        <a href="#jawa-timur" class="drawer-nav-item" onclick="switchView('jatim'); openModal('reog-ponorogo')" style="font-size: 0.88rem; padding: 0.35rem 0;">
+          <i class="fa-solid fa-mask"></i> Reog Ponorogo
+        </a>
+        <a href="#jawa-timur" class="drawer-nav-item" onclick="switchView('jatim'); openModal('yadnya-kasada')" style="font-size: 0.88rem; padding: 0.35rem 0;">
+          <i class="fa-solid fa-volcano"></i> Yadnya Kasada Bromo
+        </a>
+        <a href="#jawa-timur" class="drawer-nav-item" onclick="switchView('jatim'); openModal('tari-gandrung')" style="font-size: 0.88rem; padding: 0.35rem 0;">
+          <i class="fa-solid fa-fan"></i> Tari Gandrung
+        </a>
+        <a href="#jawa-timur" class="drawer-nav-item" onclick="switchView('jatim'); openModal('karapan-sapi')" style="font-size: 0.88rem; padding: 0.35rem 0;">
+          <i class="fa-solid fa-horse"></i> Karapan Sapi Madura
+        </a>
+        <a href="#jawa-timur" class="drawer-nav-item" onclick="switchView('jatim'); openModal('kejayaan-majapahit')" style="font-size: 0.88rem; padding: 0.35rem 0;">
+          <i class="fa-solid fa-crown"></i> Kemegahan Majapahit
+        </a>
+      </div>
+
+      <a href="#linimasa" class="drawer-nav-item" onclick="switchView('timeline')"><i class="fa-solid fa-timeline"></i> Linimasa Peradaban</a>
+      <a href="#kuis" class="drawer-nav-item" onclick="switchView('interactive')"><i class="fa-solid fa-circle-question"></i> Kuis Interaktif</a>
+      <a href="#fakta" class="drawer-nav-item" onclick="switchView('interactive')"><i class="fa-solid fa-lightbulb"></i> Fakta Tersembunyi</a>
+    </div>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-glass); text-align: center;">
+      <div style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold-light); font-size: 0.85rem; font-weight: 600;">
+        <i class="fa-solid fa-feather-pointed" style="color: var(--gold-primary);"></i> Dibuat oleh Hasina
+      </div>
+      <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.3rem;">Edisi Khusus Eksplorasi Digital</p>
+    </div>
+  </aside>
+
+  <!-- Bookmarks Drawer Sidebar -->
+  <aside class="bookmarks-drawer" id="bookmarks-drawer">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fa-solid fa-bookmark" style="color: var(--gold-primary);"></i>
+        <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: white;">Disimpan</h4>
+      </div>
+      <button class="icon-btn" id="bookmarks-close" aria-label="Tutup Favorit">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="bookmarks-list" id="bookmarks-list">
+      <!-- Dynamic via JavaScript -->
+    </div>
+    <div style="border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+      <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="clearBookmarks()">Hapus Semua</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       HERO LANDING SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="beranda">
+    <div class="hero-background-art"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-content">
+      <div class="hero-pill">
+        <i class="fa-solid fa-crown"></i> Eksplorasi Mahakarya Peradaban &bull; Karya Hasina
+      </div>
+
+      <h1 class="hero-title">
+        Keajaiban Dunia & Warisan Abadi
+      </h1>
+
+      <p class="hero-subtitle">
+        Menyingkap misteri, kejeniusan rekayasa kuno, dan pesona spiritual monumen-monumen terbesar yang pernah dipahat oleh tangan manusia di muka bumi.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#koleksi" class="btn-primary">
+          <i class="fa-solid fa-compass"></i> Mulai Jelajah Koleksi
+        </a>
+        <a href="#linimasa" class="btn-secondary">
+          <i class="fa-solid fa-clock-rotate-left"></i> Telusuri Linimasa
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">7+</span>
+          <span class="stat-label">Keajaiban Baru</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.500+</span>
+          <span class="stat-label">Tahun Sejarah</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Benua Dunia</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100M+</span>
+          <span class="stat-label">Suara Global</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THEME & PASTEL PALETTE SELECTOR MODAL
+       ========================================================================== -->
+  <div class="theme-modal" id="theme-modal">
+    <div class="theme-card">
+      <button class="modal-close-btn" id="theme-modal-close" aria-label="Tutup">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
+        <i class="fa-solid fa-palette" style="color: var(--gold-primary); font-size: 1.3rem;"></i>
+        <h3 style="font-family: var(--font-display); font-size: 1.3rem; color: var(--text-main);">Kustomisasi Tema & Warna</h3>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.4rem;">
+        Pilih mode tampilan dasar serta palet warna aksen pastel favorit Anda.
+      </p>
+
+      <!-- Section 1: Dark / Light Mode -->
+      <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--gold-primary);">
+        Mode Tampilan Dasar
+      </label>
+      <div class="theme-mode-toggle-group">
+        <button class="mode-btn active" id="modal-mode-dark" onclick="setBaseMode('dark')">
+          <i class="fa-solid fa-moon" style="font-size: 1.25rem;"></i>
+          <span>Dark Mode (Gelap)</span>
+        </button>
+        <button class="mode-btn" id="modal-mode-light" onclick="setBaseMode('light')">
+          <i class="fa-solid fa-sun" style="font-size: 1.25rem;"></i>
+          <span>Light Mode (Terang)</span>
+        </button>
+      </div>
+
+      <!-- Section 2: Pastel Colors -->
+      <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--gold-primary);">
+        Palet Warna Pastel Estetik
+      </label>
+      <div class="pastel-swatches-grid">
+        <button class="pastel-swatch-btn" data-pastel="sakura" onclick="setPastelColor('sakura')">
+          <div class="color-circle" style="background: linear-gradient(135deg, #fbcfe8, #ec4899);"></div>
+          <span class="swatch-name">Sakura Rose</span>
+        </button>
+        <button class="pastel-swatch-btn" data-pastel="sage" onclick="setPastelColor('sage')">
+          <div class="color-circle" style="background: linear-gradient(135deg, #a7f3d0, #10b981);"></div>
+          <span class="swatch-name">Matcha Sage</span>
+        </button>
+        <button class="pastel-swatch-btn" data-pastel="lavender" onclick="setPastelColor('lavender')">
+          <div class="color-circle" style="background: linear-gradient(135deg, #ddd6fe, #8b5cf6);"></div>
+          <span class="swatch-name">Lilac Lavender</span>
+        </button>
+        <button class="pastel-swatch-btn" data-pastel="peach" onclick="setPastelColor('peach')">
+          <div class="color-circle" style="background: linear-gradient(135deg, #fed7aa, #f97316);"></div>
+          <span class="swatch-name">Pastel Peach</span>
+        </button>
+        <button class="pastel-swatch-btn" data-pastel="sky" onclick="setPastelColor('sky')">
+          <div class="color-circle" style="background: linear-gradient(135deg, #bae6fd, #0ea5e9);"></div>
+          <span class="swatch-name">Sky Azure</span>
+        </button>
+        <button class="pastel-swatch-btn active" data-pastel="gold" onclick="setPastelColor('gold')">
+          <div class="color-circle" style="background: linear-gradient(135deg, #f5df88, #d4af37);"></div>
+          <span class="swatch-name">Imperial Gold</span>
+        </button>
+      </div>
+
+      <div style="margin-top: 1.4rem; text-align: center;">
+        <span style="font-size: 0.75rem; color: var(--text-dim);"><i class="fa-solid fa-floppy-disk"></i> Tema dan warna tersimpan otomatis di perangkat</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SUBMENU NAVIGASI TAMPILAN (ANTI-LONG SCROLL VIEW SWITCHER)
+       ========================================================================== -->
+  <div class="view-switcher-container">
+    <div class="view-switch-nav" id="view-switch-nav">
+      <button class="view-tab-btn active" data-target="view-panel-wonders" onclick="switchView('wonders')">
+        <i class="fa-solid fa-monument"></i> <span>7 Keajaiban Dunia</span>
+      </button>
+      <button class="view-tab-btn" data-target="view-panel-jatim" onclick="switchView('jatim')">
+        <i class="fa-solid fa-feather-pointed"></i> <span>Budaya Jawa Timur</span>
+      </button>
+      <button class="view-tab-btn" data-target="view-panel-timeline" onclick="switchView('timeline')">
+        <i class="fa-solid fa-timeline"></i> <span>Linimasa Sejarah</span>
+      </button>
+      <button class="view-tab-btn" data-target="view-panel-interactive" onclick="switchView('interactive')">
+        <i class="fa-solid fa-brain"></i> <span>Kuis & Fakta</span>
+      </button>
+      <button class="view-tab-btn" data-target="view-all" onclick="switchView('all')">
+        <i class="fa-solid fa-layer-group"></i> <span>Semua Konten</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 1: 7 KEAJAIBAN DUNIA
+       ========================================================================== -->
+  <div class="view-panel active" id="view-panel-wonders">
+    <!-- FILTER & SEARCH BAR -->
+    <section class="control-section" id="koleksi">
+      <div class="filter-wrapper">
+        <div class="tab-pills">
+          <button class="tab-pill active" data-filter="all">
+            <i class="fa-solid fa-globe"></i> Semua
+          </button>
+          <button class="tab-pill" data-filter="new7">
+            <i class="fa-solid fa-monument"></i> 7 Keajaiban Baru
+          </button>
+          <button class="tab-pill" data-filter="ancient">
+            <i class="fa-solid fa-pyramid"></i> Kuno & Abadi
+          </button>
+          <button class="tab-pill" data-filter="nusantara">
+            <i class="fa-solid fa-landmark"></i> Warisan Nusantara
+          </button>
+        </div>
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="wonder-search" placeholder="Cari monumen, era, atau negara..." />
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLES & CARDS SECTION -->
+    <section class="showcase-section" style="padding-top: 1rem;">
+      <div class="section-header">
+        <span class="section-badge">Arsip Sejarah Pilihan</span>
+        <h2 class="section-title">Mahakarya Arsitektur Manusia</h2>
+        <p class="section-desc">Pilihlah salah satu monumen di bawah ini untuk membuka artikel mendalam, rahasia rekayasa arsitektural, dan misteri yang belum terpecahkan.</p>
+      </div>
+
+      <div class="cards-grid" id="cards-container">
+        <!-- Items generated dynamically via JavaScript -->
+      </div>
+    </section>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 2: KEUNIKAN BUDAYA JAWA TIMUR
+       ========================================================================== -->
+  <div class="view-panel" id="view-panel-jatim">
+    <section class="showcase-section" id="jawa-timur" style="padding-top: 2.5rem;">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-feather-pointed"></i> Khazanah Adat & Seni Jawa Timur</span>
+        <h2 class="section-title">Keunikan & Keragaman Budaya Jawa Timur</h2>
+        <p class="section-desc">Menyelami mahakarya budaya luhur tanah Jawa Timur: dari kekuatan mistis Reog Ponorogo, pengorbanan suci Yadnya Kasada di kawah aktif Bromo, pesona Gandrung Banyuwangi, pacuan gengsi Karapan Sapi Madura, hingga kejayaan Imperium Majapahit.</p>
+      </div>
+
+      <div class="cards-grid" id="jatim-cards-container">
+        <!-- Diisi otomatis oleh JavaScript -->
+      </div>
+    </section>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 3: TIMELINE SECTION
+       ========================================================================== -->
+  <div class="view-panel" id="view-panel-timeline">
+    <section class="timeline-section" id="linimasa">
+      <div class="section-header">
+        <span class="section-badge">Jejak Masa Silam</span>
+        <h2 class="section-title">Linimasa Ribuan Abad</h2>
+        <p class="section-desc">Melompat melintasi zaman dari zaman perunggu hingga awal abad modern.</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">± 2560 SM</div>
+            <h3 class="timeline-title">Piramida Agung Giza (Mesir)</h3>
+            <p class="timeline-desc">Dibangun sebagai makam Firaun Khufu. Menjadi struktur buatan manusia tertinggi di dunia selama lebih dari 3.800 tahun lamanya.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">± 312 SM</div>
+            <h3 class="timeline-title">Kota Batu Petra (Yordania)</h3>
+            <p class="timeline-desc">Ibu kota suku pengelana Nabatea yang memahat istana, makam, dan sistem drainase air langsung ke dalam dinding tebing batu merah.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">70 – 80 M</div>
+            <h3 class="timeline-title">Koloseum Flavianus (Roma, Italia)</h3>
+            <p class="timeline-desc">Amfiteater elips terbesar karya Kekaisaran Romawi dengan sistem mekanik hypogeum bawah tanah yang mampu menampung 50.000 penonton.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">Abad ke-8 M</div>
+            <h3 class="timeline-title">Candi Borobudur (Jawa, Indonesia)</h3>
+            <p class="timeline-desc">Dibangun pada masa Dinasti Syailendra sebagai mandala kosmik tiga tingkat filosofi Buddhis (Kamadhatu, Rupadhatu, Arupadhatu).</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">± 1450 M</div>
+            <h3 class="timeline-title">Machu Picchu (Pegunungan Andes, Peru)</h3>
+            <p class="timeline-desc">Kawasan peristirahatan suci kaisar Inka Pachacuti yang dibangun di puncak bukit berbatu dengan teknik susunan batu anti-gempa *ashlar*.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 6 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">1632 – 1653 M</div>
+            <h3 class="timeline-title">Taj Mahal (Agra, India)</h3>
+            <p class="timeline-desc">Mausoleum marmer putih gading yang dibangun oleh Kaisar Mughal Shah Jahan sebagai wujud rasa cinta abadi untuk permaisurinya, Mumtaz Mahal.</p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 7 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-box">
+            <div class="timeline-year">1922 – 1931 M</div>
+            <h3 class="timeline-title">Patung Kristus Penebus (Brasil)</h3>
+            <p class="timeline-desc">Mahakarya patung Art Deco terbesar di dunia di atas Gunung Corcovado setinggi 710 meter, menjadi lambang kedamaian dan keterbukaan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==========================================================================
+       PANEL 4: INTERACTIVE HUB: QUIZ & RANDOM FACT
+       ========================================================================== -->
+  <div class="view-panel" id="view-panel-interactive">
+    <section class="interactive-hub" id="kuis">
+      <!-- Quiz Card -->
+      <div class="interactive-card">
+        <div class="interactive-title">
+          <i class="fa-solid fa-brain" style="color: var(--gold-primary);"></i>
+          Kuis Wawasan Sejarah
+        </div>
+        <p class="interactive-desc">Uji pengetahuan Anda mengenai seluk-beluk arsitektur dan misteri keajaiban dunia.</p>
+
+        <div id="quiz-container">
+          <div class="quiz-question-box" id="quiz-question">Memuat soal...</div>
+          <div class="quiz-options" id="quiz-options"></div>
+          <div class="quiz-feedback" id="quiz-feedback"></div>
+          <button class="btn-primary" id="btn-next-quiz" style="display: none;">
+            Pertanyaan Berikutnya <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Random Fact Card -->
+      <div class="interactive-card" id="fakta">
+        <div class="interactive-title">
+          <i class="fa-solid fa-lightbulb" style="color: var(--gold-primary);"></i>
+          Tahukah Kamu?
+        </div>
+        <p class="interactive-desc">Fakta unik dan rahasia mengejutkan dari balik monumen bersejarah.</p>
+
+        <div class="fact-display-area">
+          <div class="fact-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="fact-text" id="random-fact-text">
+            Perekat yang digunakan untuk menyusun bebatuan di Tembok Besar Cina pada masa Dinasti Ming mengandung bubur ketan yang dicampur dengan kapur tohor!
+          </p>
+        </div>
+
+        <button class="btn-shuffle-fact" id="btn-shuffle-fact">
+          <i class="fa-solid fa-dice"></i> Acak Fakta Lainnya
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==========================================================================
+       ARTICLE DEEP-DIVE MODAL
+       ========================================================================== -->
+  <div class="article-modal" id="article-modal">
+    <div class="modal-sheet" id="modal-sheet">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="" alt="" class="modal-hero-img" id="modal-img" />
+      <div class="modal-content-inner">
+        <div class="modal-header-meta">
+          <span class="modal-badge" id="modal-badge">Kategori</span>
+          <span style="font-size: 0.85rem; color: var(--text-dim);" id="modal-year">Tahun</span>
+        </div>
+        <h2 class="modal-title" id="modal-title">Nama Keajaiban</h2>
+        <div class="modal-location-sub" id="modal-location">
+          <i class="fa-solid fa-location-dot"></i> Lokasi
+        </div>
+        <div class="modal-text-block" id="modal-body">
+          <!-- Rich article body inserted by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Sound & Scroll-Top Buttons -->
+  <div class="floating-fab-group">
+    <button class="fab-btn" id="sound-toggle-btn" title="Nyalakan Efek Suara Ambien">
+      <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+    </button>
+    <button class="fab-btn" id="back-to-top" title="Kembali ke Atas">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- Floating Author Watermark Badge -->
+  <a href="#beranda" class="author-watermark" title="Pencipta Website: Hasina">
+    <i class="fa-solid fa-feather-pointed" style="color: var(--gold-primary);"></i>
+    <span>Created by <strong style="color: #ffffff;">Hasina</strong></span>
+  </a>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div>
+        <a href="#" class="logo-brand" style="margin-bottom: 1rem;">
+          <div class="logo-icon">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">HASINA</span>
+            <span class="logo-subtitle">Wonders & Cultural Heritage</span>
+          </div>
+        </a>
+        <p class="footer-quote">
+          "Dunia adalah sebuah buku, dan mereka yang tidak berkelana hanya membaca satu halamannya saja."
+        </p>
+        <span class="footer-author">— Santo Agustinus</span>
+        <div style="margin-top: 1.2rem; display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--border-gold); padding: 0.45rem 1rem; border-radius: var(--radius-full);">
+          <i class="fa-solid fa-feather-pointed" style="color: var(--gold-primary);"></i>
+          <span style="font-size: 0.85rem; color: #f1f5f9;">Pencipta Website: <strong style="color: var(--gold-light);">Hasina</strong></span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigasi Cepat</h4>
+        <ul class="footer-links">
+          <li><a href="#beranda">Beranda Utama</a></li>
+          <li><a href="#koleksi">7 Keajaiban Baru</a></li>
+          <li><a href="#jawa-timur">Budaya Jawa Timur</a></li>
+          <li><a href="#linimasa">Linimasa Kronologis</a></li>
+          <li><a href="#kuis">Uji Wawasan Kuis</a></li>
+          <li><a href="#fakta">Fakta Arkeologi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pencipta & Kurasi</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">
+          Situs artikel interaktif ini dirancang, ditulis, dan dikurasi secara eksklusif oleh <strong>Hasina</strong> sebagai persembahan digital untuk merayakan keagungan arsitektur dunia dan keragaman budaya Nusantara.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 <strong>HASINA</strong> &bull; Hak Cipta & Kurasi oleh <strong style="color: var(--gold-light);">Hasina</strong>. Seluruh hak cipta dilindungi.</span>
+      <span>Dibuat dengan <i class="fa-solid fa-heart" style="color: var(--accent-ruby); font-size: 0.8rem;"></i> oleh <strong>Hasina</strong></span>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC & DATA REPOSITORY
+       ========================================================================== -->
+  <script>
+    /* --------------------------------------------------------------------------
+       DATA MONUMEN KEAJAIBAN DUNIA (ARTIKEL LENGKAP & MENDALAM)
+       -------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------
+       DATA MONUMEN KEAJAIBAN DUNIA (ARTIKEL LENGKAP & MENDALAM)
+       -------------------------------------------------------------------------- */
+    const wondersData = [
+      {
+        id: "tembok-cina",
+        name: "Tembok Besar Cina",
+        category: "new7",
+        country: "Tiongkok (China)",
+        location: "Huairou District, Beijing",
+        year: "700 SM – Abad ke-17 M",
+        civilization: "Dinasti Qin, Han, & Ming",
+        image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=80",
+        tag: "Benteng Raksasa",
+        excerpt: "Mahakarya pertahanan militer terpanjang di dunia yang membentang lebih dari 21.000 kilometer melintasi pegunungan tandus dan gurun pasir utara Tiongkok.",
+        specs: {
+          arsitek: "Ratusan Ribu Prajurit, Petani, & Tahanan",
+          panjang: "21.196 km (termasuk percabangan)",
+          material: "Batu Bata, Granit, Bubur Ketan, Kapur Tohor",
+          status: "Situs Warisan Dunia UNESCO (1987)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-shield-halved"></i> Benteng Abadi Melintasi Ribuan Musim dan Dinasti</h3>
+          <p>Tembok Besar Cina bukan sekadar satu dinding tunggal yang memanjang kaku, melainkan suatu sistem pertahanan militer terpadu berskala kolosal yang terdiri dari dinding benteng bertingkat, menara suar (*watchtowers*), barak prajurit garnison, benteng pengintai, dan terowongan rahasia. Pembangunannya dirintis sejak Periode Musim Semi dan Musim Gugur (770–476 SM), dipersatukan oleh Kaisar pertama Tiongkok, <strong>Qin Shi Huang</strong> (Dinasti Qin, 221–206 SM), diperluas oleh Dinasti Han untuk menjaga Jalur Sutra, dan disempurnakan secara masif dengan bata merah bakar serta batu granit pada era <strong>Dinasti Ming</strong> (1368–1644 M).</p>
+          
+          <div class="highlight-box">
+            "Siapa yang belum pernah mendaki Tembok Besar bukanlah seorang pahlawan sejati." — Pepatah Klasik Tiongkok (不到长城非好汉)
+          </div>
+
+          <h3><i class="fa-solid fa-compass-drafting"></i> Rahasia Mortar Bubur Ketan & Telegraf Optik Kuno</h3>
+          <p>Penelitian modern oleh para ilmuwan Universitas Zhejiang mengonfirmasi rahasia ketahanan luar biasa Tembok Besar era Dinasti Ming: penggunaan campuran mortar biokimia alami berbahan <strong>bubur ketan (amilopektin)</strong> yang dicampur dengan kapur tohor terhidrasi. Reaksi kimia antara amilopektin dan kalsium karbonat membentuk matriks mikroskopis yang sangat padat dan kedap air, memberikan fleksibilitas tinggi terhadap guncangan gempa bumi serta mencegah erosi pelapukan selama berabad-abad.</p>
+          <p>Selain pertahanan fisik, tembok ini berfungsi sebagai sistem komunikasi tercepat di zamannya. Lebih dari 25.000 menara suar didirikan sepanjang jalur perbukitan. Jika pos perbatasan melihat musuh, prajurit membakar asap kotoran serigala pada siang hari dan menyalakan api obor suar pada malam hari. Kode kepulan asap ini dapat merambat sejauh 500 kilometer hanya dalam tempo beberapa jam untuk memperingatkan garnisun pusat di ibu kota.</p>
+
+          <h3><i class="fa-solid fa-route"></i> Koridor Strategis & Penjaga Jalur Sutra</h3>
+          <p>Tembok Besar tidak hanya berfungsi sebagai benteng pertempuran melawan invasi bangsa nomaden utara (seperti Xiongnu dan Mongol), melainkan juga berfungsi sebagai koridor ekonomi pelindung jalur kafilah dagang Jalur Sutra. Gerbang-gerbang legendaris seperti <em>Jiayuguan Pass</em> di ujung barat dan <em>Shanhaiguan Pass</em> ("Gerbang Pertama di Bawah Kolong Langit") di timur berfungsi sebagai pos karantina, stasiun bea cukai perdagangan internasional, serta pusat diplomasi antar-bangsa.</p>
+
+          <h3><i class="fa-solid fa-heart-crack"></i> Kisah Pilu Kemanusiaan & Koreksi Mitos Antariksa</h3>
+          <p>Di balik kemegahannya, Tembok Besar menyimpan air mata jutaan pekerja paksa, prajurit, dan petani. Salah satu cerita rakyat paling terkenal adalah kisah <strong>Meng Jiangnü</strong>, seorang istri setia yang menempuh perjalanan ribuan mil mencari suaminya yang dipaksa bekerja di tembok. Mengetahui sang suami telah tewas dan jasadnya terkubur di bawah batuan fondasi tembok, tangisan duka Meng Jiangnü begitu menyayat hati hingga konon meruntuhkan bentangan tembok sepanjang ratusan mil untuk memperlihatkan makam suaminya.</p>
+          <p>Mitos populer yang menyatakan bahwa Tembok Besar Cina dapat dilihat dari Bulan dengan mata telanjang secara ilmiah adalah keliru. Badan Antariksa Amerika Serikat (NASA) menegaskan bahwa lebar rata-rata tembok hanya 4 hingga 9 meter dengan warna material yang menyatu dengan topografi bebatuan sekitarnya. Tanpa bantuan lensa optik berdaya resolusi tinggi dari orbit rendah Bumi (LEO), mata manusia tidak mampu mendeteksi keberadaan tembok ini dari luar angkasa.</p>
+        `
+      },
+      {
+        id: "petra",
+        name: "Kota Batu Petra",
+        category: "new7",
+        country: "Yordania",
+        location: "Ma'an Governorate",
+        year: "± 312 SM – 100 M",
+        civilization: "Kerajaan Nabatea",
+        image: "https://images.unsplash.com/photo-1579606032822-1f31f9b32e18?auto=format&fit=crop&w=1200&q=80",
+        tag: "Kota Mawar Merah",
+        excerpt: "Kota metropolitan kuno yang dipahat langsung ke dalam tebing batu pasir merah muda, dengan jaringan pipa hidrolika air yang menakjubkan di tengah gurun.",
+        specs: {
+          arsitek: "Bangsa Pengembara Nabatea",
+          lokasiIkonik: "Al-Khazneh (The Treasury) & Ad-Deir",
+          material: "Tebing Batu Pasir Alami (Sandstone)",
+          status: "Situs Warisan Dunia UNESCO (1985)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-gem"></i> Permata Mawar Merah Tersembunyi di Balik Ngarai Siq</h3>
+          <p>Terletak di antara Laut Mati dan Teluk Aqaba di barat daya Yordania, Petra—berasal dari kata Yunani <em>Petros</em> yang berarti batu—adalah ibu kota peradaban bangsa pengembara Nabatea. Untuk mencapai inti kota metropolitan tersembunyi ini, pengunjung harus menyusuri lorong ngarai retakan alam sempit bernama <strong>Siq</strong> sepanjang 1,2 kilometer dengan dinding tebing batu pasir yang menjulang setinggi 80 meter. Di ujung lorong yang temaram dan berliku, pandangan akan dikejutkan oleh kemilau fasad agung <strong>Al-Khazneh (The Treasury)</strong> setinggi 40 meter yang menyala dalam gradasi merah muda, jingga, dan kuning keemasan terpapar sinar mentari gurun.</p>
+
+          <div class="highlight-box">
+            "Kecocokan warna mawar merah batu pasirnya membuat Petra dijuluki 'The Rose City' — kota yang usianya hampir separuh usia waktu itu sendiri." — Penyair J.W. Burgon
+          </div>
+
+          <h3><i class="fa-solid fa-droplet"></i> Mahakarya Rekayasa Hidrolika di Gurun Tandus</h3>
+          <p>Petra berdiri di salah satu kawasan paling gersang di Timur Tengah dengan curah hujan rata-rata kurang dari 10 sentimeter per tahun. Kendati demikian, bangsa Nabatea adalah para insinyur hidrolika terhebat pada zamannya. Mereka menciptakan sistem manajemen air revolusioner yang mampu menopang kehidupan lebih dari 30.000 penduduk dan melayani ratusan kafilah unta yang melintas setiap pekan.</p>
+          <p>Sistem ini mencakup bendungan penahan banjir bandang di mulut ngarai <em>Bab as-Siq</em>, saluran parit tertutup dengan pipa terakota keramik yang kedap udara untuk mencegah penguapan air di bawah terik matahari gurun, bak sedimentasi penyaring pasir pemurni air alami, serta lebih dari 200 tandon waduk bawah tanah (*cisterns*) yang dipahat di dalam tebing batu dengan kapasitas penyimpanan jutaan liter air tawar cadangan.</p>
+
+          <h3><i class="fa-solid fa-hammer"></i> Teknik Pahat Fasad dari Atas ke Bawah</h3>
+          <p>Keunikan arsitektur Petra terletak pada teknik pembuatannya: monumen-monumen ini tidak disusun menggunakan balok batu dari bawah ke atas dengan perancah (*scaffolding*), melainkan <strong>dipahat langsung dari puncak tebing batu terjal ke arah bawah</strong>. Para pemahat Nabatea memahat pijakan kaki di tebing, meratakan fasad dinding batu, memahat ornamen pedimen Yunani-Romawi, kolom Corinthian, dan patung dewa-dewi, lalu mengikis batu ke bawah secara bertahap hingga mencapai lantai dasar.</p>
+          <p>Monumen terbesar di Petra adalah <strong>Ad-Deir (The Monastery)</strong> dengan lebar 50 meter dan tinggi 45 meter di puncak gunung terpencil, serta sebuah amfiteater terbuka berkapasitas 8.000 penonton yang seluruh tempat duduknya dipahat utuh dari dinding tebing batu karang merah.</p>
+
+          <h3><i class="fa-solid fa-caravan"></i> Poros Perdagangan Dupa & Penemuan Kembali</h3>
+          <p>Kekayaan melimpah Petra berasal dari posisinya sebagai titik temu perdagangan rempah-rempah, sutra, serta dupa kemenyan suci (*frankincense*) dan mur (*myrrh*) dari Yaman dan Oman menuju Mesir, Suriah, Yunani, dan Roma. Namun pergeseran rute perdagangan maritim serta gempa bumi dahsyat pada tahun 363 M dan 551 M meruntuhkan infrastruktur hidrolika kota ini hingga akhirnya Petra ditinggalkan dan hanya dihuni oleh suku pengelana Badui lokal.</p>
+          <p>Keberadaan kota rahasia ini baru terungkap kembali kepada dunia luar pada tahun 1812 oleh penjelajah Swiss, <strong>Johann Ludwig Burckhardt</strong>, yang menyamar sebagai seorang syekh muslim bernama Ibrahim Ibnu Abdallah untuk mendapatkan izin memasuki lembah keramat ini. Hingga kini, para arkeolog memperkirakan bahwa baru sekitar 15% dari keseluruhan luas kota Petra yang berhasil digali; 85% sisanya masih terlelap di bawah pasir gurun.</p>
+        `
+      },
+      {
+        id: "koloseum",
+        name: "Koloseum Roma",
+        category: "new7",
+        country: "Italia",
+        location: "Piazza del Colosseo, Roma",
+        year: "70 – 80 M",
+        civilization: "Kekaisaran Romawi (Dinasti Flavia)",
+        image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80",
+        tag: "Arena Para Gladiator",
+        excerpt: "Amfiteater elips terbesar yang pernah dirancang di muka bumi, panggung bagi pertarungan gladiator, sandiwara mitologi, dan demonstrasi kekuatan politik Romawi.",
+        specs: {
+          arsitek: "Kaisar Vespasianus & Titus (Dinasti Flavia)",
+          kapasitas: "50.000 – 80.000 Penonton",
+          material: "Beton Pozzolana Romawi, Batu Travertin, Tufa",
+          status: "Situs Warisan Dunia UNESCO (1980)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-dungeon"></i> Pusat Hiburan Spektakuler Imperialisme Romawi</h3>
+          <p>Koloseum, atau nama resminya <em>Amphitheatrum Flavium</em>, didirikan atas perintah Kaisar Vespasianus pada tahun 70-72 M dan diresmikan oleh putranya, Kaisar Titus, pada tahun 80 M dengan festival perayaan spektakuler selama 100 hari berturut-turut. Pembangunannya didanai dari rampasan perang penaklukan Yerusalem dan didirikan di atas danau buatan bekas istana mewah kaisar tiran Nero (*Domus Aurea*).</p>
+          <p>Langkah ini merupakan manuver politik brilian Dinasti Flavia: mengembalikan tanah pribadi penguasa tiran kepada rakyat jelata Roma sebagai arena hiburan publik. Hal ini menjadi perwujudan nyata dari doktrin politik kekaisaran Romawi: <em>Panem et Circenses</em> (roti dan sirkus) untuk menjaga stabilitas sosial dan kesetiaan warga kota.</p>
+
+          <div class="highlight-box">
+            "Selama Koloseum berdiri tegak, Roma akan berdiri tegak; bila Koloseum runtuh, Roma akan runtuh; dan bila Roma runtuh, runtuhlah dunia." — Nubuat Sejarawan Venerable Bede (Abad ke-8 M)
+          </div>
+
+          <h3><i class="fa-solid fa-archway"></i> Rekayasa Arsitektur Vomitoria & Velarium Pelaut Misenum</h3>
+          <p>Koloseum adalah amfiteater batu dan beton terbesar yang pernah dibangun dalam sejarah peradaban klasik, dengan panjang elips 189 meter, lebar 156 meter, dan tinggi dinding luar mencapai 48 meter setara gedung 12 lantai modern. Gedung ini ditopang oleh fondasi beton tebal dan menggunakan lebih dari 100.000 meter kubik batu kapur travertin yang diikat oleh 300 ton klem besi tanpa mortar.</p>
+          <p>Keajaiban rancang bangunnya terbukti dari sistem <strong>80 gerbang melengkung (vomitoria)</strong> bernomor angka Romawi. Melalui sistem sirkulasi koridor berkubah bertingkat ini, stadion raksasa yang menampung 50.000 hingga 80.000 penonton tersebut dapat dikosongkan secara tertib hanya dalam waktu 15 menit—suatu standar keselamatan evakuasi yang masih menjadi acuan desain stadion modern hingga abad ke-21.</p>
+          <p>Untuk memayungi penonton dari terik matahari musim panas Italia, dipasang kanvas raksasa bernama <strong>Velarium</strong> di atas puncak stadion. Velarium digerakkan dengan sistem tali-temali kompleks yang dioperasikan oleh satu detasemen pelaut angkatan laut Romawi dari armada kekaisaran di Misenum.</p>
+
+          <h3><i class="fa-solid fa-gears"></i> Labirin Bawah Tanah Hypogeum & Simulasi Perang Laut</h3>
+          <p>Lantai arena terbuat dari papan kayu yang dilapisi pasir tebal (*harena*, asal kata *arena*) yang berfungsi meredam tumpahan darah para petarung. Di bawah lantai kayu tersebut terdapat <strong>Hypogeum</strong>, labirin berlantai dua yang terdiri dari jaringan lorong bawah tanah, kandang hewan buas, dan ruang tunggu gladiator.</p>
+          <p>Hypogeum dilengkapi dengan <strong>28 sistem derek katrol mekanis dan lift bertenaga budak</strong>. Melalui pintu jebakan tersembunyi (*trapdoors*), para gladiator, singa Afrika, beruang, macan tutul, dan dekorasi hutan pepohonan dapat dimunculkan secara mendadak ke tengah arena, menciptakan efek kejut panggung yang memukau penonton. Bahkan pada masa pembukaan awal, arena Koloseum konon dapat dialiri air untuk mementaskan <em>Naumachia</em>—rekonstruksi pertempuran laut berskala penuh dengan kapal perang sungguhan.</p>
+
+          <h3><i class="fa-solid fa-shield"></i> Hierarki Gladiator & Saksi Abad Pertengahan</h3>
+          <p>Pertarungan gladiator (*munera*) diatur dengan aturan disiplin ketat. Para gladiator dilatih di sekolah khusus (*ludus*) dan dibagi menjadi kelas-kelas senjata tertentu, seperti <em>Retiarius</em> (bersenjatakan jaring trisula) melawan <em>Secutor</em> (berhelm bundar kedap pandang dan bertameng tebal). Meskipun banyak gladiator adalah budak atau tawanan perang, beberapa petarung sukses menjadi selebritas yang sangat dipuja dan kaya raya di Roma.</p>
+          <p>Setelah pertarungan gladiator dilarang pada awal abad ke-5 M dan perburuan satwa liar dihentikan pada tahun 523 M, Koloseum sempat difungsikan sebagai benteng perlindungan keluarga bangsawan Roma pada Abad Pertengahan, tempat ibadah, hingga tambang batu bagi pembangunan istana dan gereja Vatikan, sebelum akhirnya ditetapkan sebagai situs suci peringatan martir oleh Paus Benediktus XIV pada abad ke-18.</p>
+        `
+      },
+      {
+        id: "chichen-itza",
+        name: "Chichén Itzá",
+        category: "new7",
+        country: "Meksiko",
+        location: "Semenanjung Yucatán",
+        year: "± 600 – 1200 M",
+        civilization: "Bangsa Maya & Toltek",
+        image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1200&q=80",
+        tag: "Piramida Astronomi",
+        excerpt: "Kota suci suku Maya yang mencerminkan pemahaman astronomi yang sangat presisi melalui Piramida El Castillo dan fenomena ilusi ular berbulu Kukulkan.",
+        specs: {
+          arsitek: "Pendeta & Astronom Suku Maya",
+          tinggiPiramida: "30 Meter (Kuil El Castillo)",
+          fenomenaIkonik: "Bayangan Ular Turun saat Ekuinoks",
+          status: "Situs Warisan Dunia UNESCO (1988)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-moon"></i> Piramida El Castillo: Kalender Astronomi Batu Kosmik</h3>
+          <p>Terletak di tengah hutan tropis Semenanjung Yucatán, Chichén Itzá adalah kota metropolitan religius dan politik terbesar bangsa Maya-Toltek. Mahakarya terpenting situs ini adalah piramida berundak <strong>El Castillo</strong> (Kuil Kukulkan, sang Dewa Ular Berbulu) setinggi 30 meter. Piramida ini bukan sekadar kuil persembahan, melainkan perwujudan fisik kalender matahari astronomis suku Maya yang luar biasa akurat.</p>
+          <p>Piramida ini memiliki 4 sisi tangga curam, di mana masing-masing sisi memiliki <strong>91 anak tangga</strong>. Jika keempat sisi tangga dijumlahkan (91 × 4 = 364 anak tangga) dan ditambahkan dengan platform pelataran kuil di puncaknya, totalnya berjumlah tepat <strong>365 anak tangga</strong>—merepresentasikan jumlah hari dalam kalender matahari tahunan (<em>Haab</em>). Selain itu, 9 undakan teras di setiap sisi dibagi dua oleh tangga utama menghasilkan 18 teras, mencerminkan 18 bulan dalam penanggalan Maya, serta 52 panel relief yang mewakili siklus kalender suci abad Maya (*Calendar Round* 52 tahun).</p>
+
+          <div class="highlight-box">
+            "Setiap ekuinoks musim semi (21 Maret) dan gugur (21 September), bayangan matahari senja menciptakan ilusi optik ular raksasa Kukulkan yang merayap turun perlahan di tangga piramida."
+          </div>
+
+          <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Keajaiban Ilusi Optik Sang Ular Berbulu Kukulkan</h3>
+          <p>Fenomena paling legendaris di Chichén Itzá terjadi tepat pada hari Ekuinoks Musim Semi dan Ekuinoks Musim Gugur. Saat matahari senja mulai terbenam di ufuk barat, sudut kemiringan teras piramida membiaskan cahaya dan memproyeksikan rangkaian <strong>7 segitiga bayangan terbalik</strong> di sepanjang dinding sisi tangga utara.</p>
+          <p>Bayangan ini menyatu sempurna dengan patung kepala ular batu raksasa di dasar tangga piramida, menghasilkan ilusi optik spektakuler: tampak seperti seekor ular berbulu raksasa mistis yang sedang merayap turun perlahan dari langit kuil menuju perut bumi untuk menyuburkan tanah pertanian rakyat Maya. Penyelarasan geometri yang menuntut perhitungan astronomi derajat matahari sedemikian rumit membuktikan tingkat kejeniusan sains bangsa Maya ribuan tahun silam.</p>
+
+          <h3><i class="fa-solid fa-volume-high"></i> Akustik Burung Suci Quetzal & Lapangan Bola Gran Juego</h3>
+          <p>Chichén Itzá menyimpan fenomena akustika arsitektural yang menakjubkan. Jika seorang pengunjung berdiri di pelataran dasar depan tangga El Castillo dan bertepuk tangan satu kali dengan lantang, pantulan gema suara dari anak-anak tangga piramida akan membiaskan frekuensi nada yang persis menirukan suara kicauan melengking burung <strong>Resplendent Quetzal</strong>—burung suci bulu zamrud yang disembah bangsa Maya sebagai utusan dewa.</p>
+          <p>Di samping piramida, terbentang <strong>Gran Juego de Pelota</strong> (Lapangan Permainan Bola Mesoamerika) terbesar dan termegah di benua Amerika, berukuran 166 × 68 meter dengan dinding setinggi 8 meter. Lapangan ini dirancang dengan resonansi akustik bisikan (*whispering gallery*): dua orang yang berdiri di dua ujung lapangan yang berjarak lebih dari 150 meter dapat saling mendengar bisikan lirih satu sama lain tanpa alat pengeras suara.</p>
+
+          <h3><i class="fa-solid fa-eye"></i> Observatorium El Caracol & Cenote Sagrado</h3>
+          <p>Di sudut selatan kawasan berdiri bangunan berkubah unik bernama <strong>El Caracol</strong> ("Sang Siput", dinamai dari tangga spiral di dalamnya). Gedung ini berfungsi sebagai observatorium astronomi canggih. Jendela-jendela bidik pada dinding kubah diarahkan dengan ketelitian tinggi untuk memantau pergerakan planet Venus melintasi cakrawala, yang diyakini suku Maya sebagai dewa perang dan penentu waktu musim bercocok tanam.</p>
+          <p>Kebutuhan air kota dipenuhi oleh <strong>Cenote Sagrado</strong>, lubang runtuhan kapur alami (*sinkhole*) raksasa sedalam 20 meter dengan diameter 60 meter yang berisi air tawar jernih. Selain sumber air, cenote ini menjadi portal suci pemujaan Dewa Hujan Chaac. Ekskavasi arkeologi di dasar cenote menemukan ribuan artefak persembahan berharga, termasuk perhiasan giok, emas, lonceng tembaga, serta kerangka upacara keagamaan kuno.</p>
+        `
+      },
+      {
+        id: "machu-picchu",
+        name: "Machu Picchu",
+        category: "new7",
+        country: "Peru",
+        location: "Wilayah Cusco, Lembah Suci Urubamba",
+        year: "± 1450 M",
+        civilization: "Kekaisaran Inka (Tahuantinsuyu)",
+        image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80",
+        tag: "Benteng di Atas Awan",
+        excerpt: "Kota tersembunyi kekaisaran Inka di lereng curam pegunungan Andes pada ketinggian 2.430 meter di atas permukaan laut, dibangun tanpa menggunakan mortar perekat.",
+        specs: {
+          arsitek: "Kaisar Inka Pachacuti Yupanqui",
+          ketinggian: "2.430 meter di atas permukaan laut",
+          teknikStruktur: "Batu Pahat Kering Ashlar (Interlocking)",
+          status: "Situs Warisan Dunia UNESCO (1983)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-mountain"></i> Kota Perlindungan Suci di Antara Puncak Awan Andes</h3>
+          <p>Tersembunyi di punggungan gunung granit sempit di antara dua puncak menjulang—Huayna Picchu ("Puncak Muda") dan Machu Picchu ("Puncak Tua")—pada ketinggian 2.430 meter di atas permukaan laut, bertengger benteng peristirahatan paling spektakuler di muka bumi. Machu Picchu dibangun sekitar tahun 1450 M pada era keemasan Kaisar Inka terbesar, <strong>Pachacuti Yupanqui</strong>.</p>
+          <p>Kawasan ini berfungsi ganda sebagai kediaman bangsawan kekaisaran, pusat observasi perbintangan spiritual, serta lumbung pangan agraris. Dikelilingi jurang curam sedalam 400 meter yang bermuara pada gemuruh Sungai Urubamba di bawahnya serta diselimuti kabut tebal hutan pegunungan Andes, kota ini selamat dari serbuan penakluk Spanyol (*Conquistador*) karena letaknya yang teramat rahasia dan tidak pernah dicantumkan dalam peta penjajah.</p>
+
+          <div class="highlight-box">
+            "Batu-batu granit raksasa di Machu Picchu dipahat dan disusun sedemikian rapat hingga sehelai kartu pos atau mata pisau tertipis pun tidak bisa diselipkan di antara celah sambungannya."
+          </div>
+
+          <h3><i class="fa-solid fa-cubes"></i> Mahakarya Sambungan Batu Anti-Gempa Ashlar</h3>
+          <p>Pegunungan Andes berada di kawasan cincin api dengan aktivitas seismik gempa bumi yang sangat tinggi. Sadar akan ancaman tersebut, para arsitek Inka mengembangkan teknologi konstruksi batu kering <strong>Ashlar</strong> tanpa menggunakan semen ataupun mortar perekat.</p>
+          <p>Ribuan balok batu granit abu-abu dipahat menggunakan palu batu perunggu dan diampelas menggunakan pasir basah hingga memiliki sudut-sudut poligon yang saling mengunci (*interlocking joints*). Sudut-sudut pintu dan jendela dirancang condong ke dalam (bentuk trapesium khas Inka). Ketika gempa bumi besar mengguncang, balok-balok batu ini akan bergoyang menyerap energi gelombang seismik, lalu gravitasi dan sistem kuncian membuat batu-batu tersebut kembali merapat di posisi semula tanpa roboh—suatu kejeniusan rekayasa yang melampaui gedung-gedung kolonial Spanyol yang berulang kali runtuh akibat gempa.</p>
+
+          <h3><i class="fa-solid fa-wheat-awn"></i> Rekayasa Terasering Berlapis & 129 Saluran Air</h3>
+          <p>Lebih dari 60% konstruksi Machu Picchu sebenarnya berada di bawah tanah. Lereng gunung yang sangat terjal dengan kemiringan hingga 50 derajat distabilkan oleh <strong>ratusan teras pertanian bertingkat (*andenes*)</strong>. Teras-teras ini dibangun dengan struktur berlapis: lapisan batu kerikil kasar di bagian bawah untuk drainase cepat, pasir di tengah, dan lapisan tanah humus subur di permukaan atas.</p>
+          <p>Sistem ini ditopang oleh <strong>129 saluran drainase bawah tanah</strong> yang mengalirkan air hujan lebat tropis langsung ke lereng gunung tanpa menyebabkan erosi atau tanah longsor. Selain itu, insinyur Inka membangun saluran air batu sepanjang 749 meter yang bersumber dari mata air alami pegunungan, mengalirkan air jernih gravitasi ke 16 air mancur batu bertingkat untuk kebutuhan seluruh warga istana.</p>
+
+          <h3><i class="fa-solid fa-sun"></i> Batu Penambat Surya Intihuatana & Kuil Kondor</h3>
+          <p>Di titik tertinggi sektor religius berdiri <strong>Intihuatana</strong> ("Tempat Menambat Matahari"), sebuah monolit batu granit yang dipahat langsung dari punggungan batu karang alami. Pilar batu ini berfungsi sebagai jam matahari dan penentu astronomis. Pada tanggal 21 Juni (Solstis Musim Dingin belahan selatan), para imam Inka menggelar upacara suci untuk 'mengikat' matahari secara simbolis ke batu tersebut agar sang mentari tidak meninggalkan mereka dan kembali menerangi bumi.</p>
+          <p>Kuil menakjubkan lainnya adalah <strong>Kuil Burung Kondor</strong>, di mana batu karang alam dipahat menyerupai sayap raksasa burung kondor Andes yang sedang membentang, dengan kepala kondor di lantai dasar. Dalam kosmologi Inka, burung kondor adalah hewan suci penguasa dunia atas (<em>Hanan Pacha</em>) yang mengantarkan arwah manusia menuju alam keabadian. Machu Picchu baru diperkenalkan kembali ke mata dunia internasional pada tahun 1911 oleh sejarawan Universitas Yale, <strong>Hiram Bingham</strong>.</p>
+        `
+      },
+      {
+        id: "taj-mahal",
+        name: "Taj Mahal",
+        category: "new7",
+        country: "India",
+        location: "Tepi Sungai Yamuna, Agra, Uttar Pradesh",
+        year: "1632 – 1653 M",
+        civilization: "Kesultanan Mughal",
+        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+        tag: "Simfoni Cinta Marmer Putih",
+        excerpt: "Monumen cinta abadi mahakarya seni Islam-Persia-India, dibangun oleh Kaisar Shah Jahan untuk mengenang permaisuri tercintanya Mumtaz Mahal.",
+        specs: {
+          arsitek: "Ustad Ahmad Lahori & Mir Abd-ul Karim",
+          waktuKonstruksi: "22 Tahun (Lebih dari 20.000 Seniman)",
+          material: "Marmer Makrana Putih & 28 Jenis Batu Permata",
+          status: "Situs Warisan Dunia UNESCO (1983)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-heart"></i> Syair Cinta Abadi yang Dipahat dalam Marmer Putih</h3>
+          <p>Berdiri megah di tepi selatan Sungai Yamuna di Agra, India, Taj Mahal—yang berarti "Mahkota Istana"—adalah mahakarya arsitektur Islam-Indo-Persia paling termasyhur di dunia. Mausoleum marmer putih ini dibangun oleh Kaisar Mughal ke-5, <strong>Shah Jahan</strong>, sebagai wujud duka cita mendalam dan cinta abadi kepada permaisuri tercintanya, <strong>Mumtaz Mahal</strong> (Arjumand Banu Begum), yang wafat pada tahun 1631 saat melahirkan anak ke-14 mereka.</p>
+          <p>Pembangunannya memakan waktu selama 22 tahun (1632–1653) dan melibatkan lebih dari 20.000 pemahat batu, kaligrafer, dan seniman mozaik dari seluruh penjuru India, Persia, Kekaisaran Ottoman, dan Asia Tengah, dibantu oleh armada 1.000 gajah untuk mengangkut material bangunan.</p>
+
+          <div class="highlight-box">
+            "Taj Mahal bukanlah sekadar bangunan batu; ia adalah air mata duka cita seorang kaisar yang menjelma menjadi puisi cinta abadi di atas marmer putih." — Penyair Sir Edwin Arnold
+          </div>
+
+          <h3><i class="fa-solid fa-shapes"></i> Geometri Simetri Absolut & Empat Menara Pelindung</h3>
+          <p>Kompleks Taj Mahal dirancang dengan tata ruang simetri bilateral sempurna di sepanjang sumbu poros utara-selatan, merefleksikan konsep taman surga firdaus (<em>Charbagh</em>) dalam tradisi Al-Qur'an dengan empat kanal air utama yang bertemu di kolam marmer tengah (*Al-Kawthar*). Satu-satunya elemen yang asimetris di seluruh kompleks ini hanyalah makam cenotaph Shah Jahan di dalam ruang utama, yang diletakkan di samping makam Mumtaz Mahal oleh putranya, Aurangzeb, bertahun-tahun kemudian.</p>
+          <p>Keempat menara minaret setinggi 40 meter di sudut pelataran marmer sengaja dirancang <strong>miring sekitar 2 hingga 3 derajat ke arah luar</strong>. Rekayasa cerdas arsitek Ustad Ahmad Lahori ini bertujuan agar apabila terjadi gempa bumi berkekuatan dahsyat, keempat menara tersebut akan tumbang ke arah luar menjauhi bangunan utama, sehingga kubah marmer dan makam permaisuri tetap terlindungi dari kehancuran.</p>
+
+          <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Marmer Makrana Berubah Warna & Seni Pietra Dura</h3>
+          <p>Fasad Taj Mahal dibangun dari marmer putih gading terbaik dari tambang Makrana di Rajasthan. Marmer ini memiliki sifat optik translusen (tembus cahaya sebagian). Hasilnya, warna Taj Mahal berubah secara magis sepanjang hari: berona merah muda lembut saat fajar menyingsing, putih cemerlang menyilaukan di tengah hari terik, dan memancarkan kilau emas keperakan yang mistis di bawah siraman sinar bulan purnama.</p>
+          <p>Dinding makam dihiasi seni tatah batu mulia tingkat tinggi bernama <strong>Pietra Dura (Parchin Kari)</strong>. Bunga-bunga surga ditatah dari 28 jenis batu mulia dan semi-mulia: lapis lazuli dari Afghanistan, giok dan giok nefrit dari Tiongkok, pirus dari Tibet, karnelian dari Yaman, safir dari Sri Lanka, serta ametis dan kristal. Kaligrafi ayat-ayat suci Al-Qur'an (seperti Surah Al-Fajr dan Surah Yasin) dipahat oleh master kaligrafer Amanat Khan dengan pembesaran rasio perspektif optik khusus, sehingga huruf kaligrafi di puncak lengkungan tampak sama besar dengan huruf di bagian bawah dari sudut pandang manusia yang berdiri di pelataran.</p>
+
+          <h3><i class="fa-solid fa-water"></i> Rahasia Fondasi Kayu Bawah Tanah & Konservasi Modern</h3>
+          <p>Membangun struktur marmer seberat ratusan ribu ton di atas tanah endapan lumpur sungai yang labil menuntut kejeniusan fondasi. Para insinyur Mughal menggali puluhan sumur dalam berbatu dan mengisinya dengan kerangka balok kayu pohon mahoni dan eboni (*ebony*). Kayu jenis ini memiliki sifat unik: kayu akan tetap sekuat baja asalkan terendam dalam kelembapan air tawar yang konstan dari aliran Sungai Yamuna.</p>
+          <p>Di era modern, surutnya debit air Sungai Yamuna dan polusi udara dari kawasan industri sempat menyebabkan mengeringnya fondasi kayu dan timbulnya noda kekuningan pada marmer akibat hujan asam. Pemerintah India kini menetapkan zona perlindungan lingkungan *Taj Trapezium Zone (TTZ)* seluas 10.400 km² serta rutin melakukan perawatan pembersihan marmer menggunakan lulur lumpur tanah liat alami (*Fuller's earth*) untuk mengembalikan kilau asli sang monumen cinta abadi.</p>
+        `
+      },
+      {
+        id: "kristus-penebus",
+        name: "Patung Kristus Penebus",
+        category: "new7",
+        country: "Brasil",
+        location: "Puncak Gunung Corcovado, Rio de Janeiro",
+        year: "1922 – 1931 M",
+        civilization: "Modern (Gerakan Seni Art Deco)",
+        image: "https://images.unsplash.com/photo-1593995863951-5e994e325888?auto=format&fit=crop&w=1200&q=80",
+        tag: "Dekapan Perdamaian",
+        excerpt: "Patung Art Deco kolosal setinggi 30 meter di puncak tebing Corcovado setinggi 710 meter, merentangkan kedua tangan menyambut dunia dengan pesan kasih dan damai.",
+        specs: {
+          pematung: "Paul Landowski & Insinyur Heitor da Silva Costa",
+          tinggiTotal: "38 Meter (Patung 30 m + Pedestal 8 m)",
+          rentangTangan: "28 Meter (Bobot: 1.145 Ton)",
+          status: "Situs Warisan Dunia UNESCO (2012)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-hands-holding"></i> Mercusuar Kemanusiaan di Puncak Tebing Corcovado</h3>
+          <p>Dikenal dalam bahasa Portugis sebagai <em>Cristo Redentor</em>, patung kolosal bergaya Art Deco terbesar di dunia ini berdiri megah di puncak tebing cadas Gunung Corcovado setinggi 710 meter di dalam kawasan Taman Nasional Hutan Tijuca, Rio de Janeiro, Brasil. Dari atas puncaknya, patung ini menghadap panorama spektakuler teluk Guanabara, Gunung Sugarloaf, dan garis pantai Copacabana.</p>
+          <p>Gagasan mendirikan monumen di puncak Corcovado pertama kali diusulkan pada pertengahan abad ke-19 oleh pastor Pedro Maria Boss, namun baru terealisasi pada dekade 1920-an untuk memperingati satu abad kemerdekaan Brasil (1822–1922). Proyek ini sepenuhnya didanai oleh sumbangan swadaya masyarakat dan umat gereja Brasil melalui gerakan nasional <em>Semana do Monumento</em> tanpa menggunakan dana perbendaharaan negara.</p>
+
+          <div class="highlight-box">
+            "Kedua tangan patung yang terentang selebar 28 meter membentuk siluet salib agung, melambangkan pelukan damai, kehangatan penerimaan, dan keterbukaan bagi seluruh umat manusia tanpa memandang suku, bangsa, atau agama."
+          </div>
+
+          <h3><i class="fa-solid fa-hammer"></i> Rekayasa Beton Bertulang di Puncak Jurang Terjal</h3>
+          <p>Merancang dan mendirikan patung beton berbobot 1.145 ton di atas tebing puncak gunung yang curam dengan terpaan angin kencang berkecepatan 150 km/jam adalah tantangan teknik yang luar biasa rumit pada zamannya. Monumen ini merupakan hasil kolaborasi internasional yang harmonis:</p>
+          <ul>
+            <li><strong>Heitor da Silva Costa:</strong> Insinyur sipil Brasil yang memenangkan sayembara desain dan memimpin proyek konstruksi keseluruhan.</li>
+            <li><strong>Paul Landowski:</strong> Pematung maestro Prancis-Polandia yang memahat model tanah liat kepala dan kedua tangan patung berukuran nyata di studionya di Paris.</li>
+            <li><strong>Albert Caquot:</strong> Insinyur struktur terkemuka Prancis yang merancang kerangka beton bertulang (*reinforced concrete*) bagian dalam patung.</li>
+            <li><strong>Gheorghe Leonida:</strong> Pematung asal Rumania yang mengukir detail ekspresi wajah Kristus yang teduh dan penuh belas kasih.</li>
+          </ul>
+          <p>Seluruh material beton, balok, dan peralatan berat diangkut ke puncak tebing gunung menggunakan kereta api rel gerigi bersejarah (*Corcovado Rack Railway*), jalur kereta api listrik pertama di Brasil yang dibangun sejak 1884.</p>
+
+          <h3><i class="fa-solid fa-puzzle-piece"></i> Jutaan Mosaik Batu Sabun Bertuliskan Doa Sukarelawan</h3>
+          <p>Beton bertulang biasa akan mudah retak dan terkelupas jika terpapar cuaca tropis laut yang lembap dan angin garam Rio. Untuk melindunginya, Heitor da Silva Costa memilih melapisi seluruh permukaan luar patung dengan <strong>lebih dari 6 juta keping ubin mosaik segitiga kecil berbahan batu sabun (*steatite*)</strong> yang ditambang dari Caruaru, Minas Gerais.</p>
+          <p>Batu sabun memiliki sifat lentur, tahan terhadap perubahan suhu ekstrem, dan kedap air. Selama proses penempelan mosaik oleh para pengrajin wanita sukarelawan pada dekade 1920-an, banyak dari mereka yang menuliskan nama anggota keluarga mereka, tanggal pernikahan, serta doa-doa harapan rahasia di balik sisi kepingan batu sebelum direkatkan secara permanen pada patung.</p>
+
+          <h3><i class="fa-solid fa-cloud-bolt"></i> Penangkal Petir Alami & Simbol Perdamaian Global</h3>
+          <p>Sebagai objek tertinggi di puncak cakrawala Rio de Janeiro, patung Kristus Penebus tersambar petir rata-rata 3 hingga 6 kali setiap tahunnya. Pada badai petir dahsyat tahun 2014, petir menyambar ujung jari jempol dan kepala patung hingga mengalami kerusakan pecahan batu. Untuk mengantisipasinya, sistem sangkar penangkal petir canggih (*Faraday cage*) dan elektroda pembumian dipasang di mahkota kepala dan ujung kedua tangannya.</p>
+          <p>Di dalam pedestal dasar patung setinggi 8 meter terdapat kapel kecil <em>Nossa Senhora Aparecida</em> yang digunakan untuk upacara pembaptisan dan pernikahan. Pada tahun 2007, lebih dari 100 juta masyarakat dunia memilih Cristo Redentor sebagai salah satu dari 7 Keajaiban Dunia Baru, mengukuhkannya sebagai mercusuar persaudaraan, cinta kasih, dan keindahan abadi benua Amerika Selatan.</p>
+        `
+      },
+      {
+        id: "borobudur",
+        name: "Candi Borobudur",
+        category: "nusantara",
+        country: "Indonesia",
+        location: "Magelang, Jawa Tengah",
+        year: "± 750 – 825 M",
+        civilization: "Wangsa Syailendra (Kerajaan Mataram Kuno)",
+        image: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1200&q=80",
+        tag: "Mahakarya Nusantara",
+        excerpt: "Monumen candi Buddha terbesar di dunia, mahakarya mandala kosmik dengan 2.672 panel relief naratif dan 504 arca Buddha yang dipahat dari batu andesit.",
+        specs: {
+          arsitek: "Gunadharma (Tradisi Lisan Mataram Kuno)",
+          volumeBatu: "55.000 Meter Kubik Batu Andesit Alami",
+          tinggiAsli: "42 Meter (Kini 35,4 Meter)",
+          status: "Situs Warisan Dunia UNESCO (1991)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-dharmachakra"></i> Puncak Mahakarya Wangsa Syailendra di Tanah Jawa</h3>
+          <p>Candi Borobudur adalah monumen candi Buddha Mahayana terbesar di jagat raya, didirikan sekitar tahun 750 hingga 825 Masehi pada masa kejayaan Wangsa Syailendra di bawah kepemimpinan <strong>Raja Samaratungga</strong> dan putrinya, <strong>Pramodhawardhani</strong>. Candi ini berdiri megah di atas bukit alami di Dataran Kedu, Magelang, Jawa Tengah, diapit oleh aliran dua sungai suci (Sungai Progo dan Sungai Elo) serta dikelilingi oleh empat gunung api megah: Merapi, Merbabu, Sumbing, dan Sindoro.</p>
+          <p>Menurut tradisi lisan masyarakat Jawa, sang arsitek jenius yang merancang mahakarya ini bernama <strong>Gunadharma</strong>. Borobudur dibangun bukan sebagai kuil tertutup tempat peribadatan tersembunyi, melainkan sebagai mandala tiga dimensi raksasa dan buku panduan ziarah spiritual visual yang memandu manusia melangkah dari kegelapan nafsu duniawi menuju puncak pencerahan sejati (*Bodhisattva*).</p>
+
+          <div class="highlight-box">
+            "Semua balok batu andesit Borobudur dirangkai tanpa semen ataupun perekat, melainkan menggunakan sistem pasak takik batu (*interlocking joints*) seperti lego alami."
+          </div>
+
+          <h3><i class="fa-solid fa-layer-group"></i> Mandala Kosmologi Tiga Tingkatan Kehidupan Spiritual</h3>
+          <p>Struktur arsitektur Borobudur membagi perjalanan spiritual manusia menjadi tiga ranah kosmologi Buddhis (*Triloka*):</p>
+          <ul>
+            <li><strong>Kamadhatu (Kaki Candi):</strong> Ranah manusia yang masih terikat hawa nafsu rendah dan hukum sebab-akibat karma. Di bagian kaki ini terukir 160 panel relief <em>Karmawibhangga</em> yang menggambarkan perilaku manusia (pembunuhan, gosip, amal kebajikan) beserta ganjaran karmanya. Sebagian besar kaki candi ini kemudian ditutup dengan timbunan batu tambahan (*encasement*) kuno untuk memperkuat stabilitas struktur lereng bukit.</li>
+            <li><strong>Rupadhatu (Empat Lorong Berundak Persegi):</strong> Ranah wujud di mana manusia telah mampu melepaskan hawa nafsu duniawi namun masih terikat oleh rupa fisik dan nama. Dinding lorong dihiasi panel relief naratif kisah kehidupan Buddha Gautama (*Lalitavistara*), kisah kelahiran masa lampau Buddha (*Jataka* dan *Avadana*), serta pengembaraan pemuda Sudhana mencari guru pencerahan (*Gandavyuha*).</li>
+            <li><strong>Arupadhatu (Tiga Teras Lingkar Puncak):</strong> Ranah tanpa rupa dan kesempurnaan mutlak nirwana. Di pelataran melingkar konsentris ini, tidak ada relief dinding sama sekali. Berdiri <strong>72 stupa berterawang</strong> berbentuk belah ketupat dan bujur sangkar yang di dalamnya bersemayam arca Dhyani Buddha, mengelilingi sebuah <strong>Stupa Induk Raksasa</strong> setinggi 10 meter yang berongga kosong sempurna di puncaknya—simbol kekosongan sejati (*Sunyata*) dan pembebasan abadi dari belenggu reinkarnasi.</li>
+          </ul>
+
+          <h3><i class="fa-solid fa-cubes-stacked"></i> Sambungan Pasak Interlocking & Talang Air Makara</h3>
+          <p>Borobudur tersusun dari sekitar <strong>55.000 meter kubik batu andesit alami</strong> (kurang lebih 2 juta bongkahan balok batu) yang ditambang dari dasar sungai-sungai vulkanik di sekitarnya. Seluruh candi dirakit tanpa menggunakan perekat semen atau getah pohon sama sekali. Para pemahat kuno memotong batu dengan takik lidah-alur, sambungan ekor burung, dan pasak sudut (*interlocking joints*) sehingga setiap batu saling mengunci satu sama lain dengan presisi luar biasa.</p>
+          <p>Untuk menghadapi curah hujan tropis yang deras, candi dilengkapi <strong>100 talang pancuran air (*jaladwara*)</strong> berukir kepala monster air mitologi <em>Makara</em>. Air hujan dialirkan keluar secara gravitasi melalui mulut Makara ke pelataran bawah, mencegah rembesan air merusak struktur tanah inti bukit di dalam candi.</p>
+
+          <h3><i class="fa-solid fa-scroll"></i> 2.672 Relief Naratif & Kebangkitan dari Abu Merapi</h3>
+          <p>Dengan <strong>1.460 panel relief cerita naratif, 1.212 panel relief dekoratif, dan 504 arca Buddha</strong> dengan berbagai variasi mudra (sikap tangan), Borobudur dinobatkan sebagai galeri relief batu Buddhis terlengkap dan terluas di dunia. Jika seluruh panel reliefnya dibentangkan lurus, panjangnya mencapai lebih dari 3 kilometer.</p>
+          <p>Setelah meletusnya Gunung Merapi dan berpindahnya pusat peradaban Mataram Kuno ke Jawa Timur pada abad ke-10, Borobudur tertidur berabad-abad terkubur di bawah lapisan abu vulkanik lebat dan semak belantara tropis. Candi ini ditemukan kembali pada tahun 1814 oleh tim insinyur H.C. Cornelius atas perintah Gubernur Jenderal Inggris di Jawa, <strong>Thomas Stamford Raffles</strong>.</p>
+          <p>Pemugaran modern terbesar dilakukan oleh Pemerintah Republik Indonesia bersama UNESCO dari tahun 1973 hingga 1983, yang membongkar dan merestorasi lebih dari satu juta balok batu menggunakan katalog komputerisasi canggih. Kini, Borobudur tidak hanya menjadi kebanggaan cagar budaya dunia UNESCO, tetapi juga pusat ziarah perayaan Hari Raya Tri Suci Waisak internasional setiap tahunnya.</p>
+        `
+      },
+      {
+        id: "giza",
+        name: "Piramida Agung Giza",
+        category: "ancient",
+        country: "Mesir",
+        location: "Dataran Tinggi Giza, Tepi Barat Kairo",
+        year: "± 2560 SM (Dinasti ke-4)",
+        civilization: "Kerajaan Mesir Kuno (Old Kingdom)",
+        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=80",
+        tag: "Keajaiban Kuno Terakhir",
+        excerpt: "Satu-satunya dari 7 Keajaiban Dunia Kuno yang masih berdiri utuh hingga kini, monumen keabadian Firaun Khufu yang dibangun dari 2,3 juta balok batu.",
+        specs: {
+          pembangun: "Firaun Khufu (Cheops) & Wazir Hemiunu",
+          bobotTotal: "Sekitar 6 Juta Ton Batu Alam",
+          tinggiAsli: "146,6 Meter (Kini 138,8 Meter)",
+          status: "Situs Warisan Dunia UNESCO (1979)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-ankh"></i> Monumen Keabadian Penantang Waktu Tertua di Bumi</h3>
+          <p>Berdiri tegak di Dataran Tinggi Giza di tepi barat Sungai Nil dekat Kairo, Piramida Agung Giza adalah keajaiban arsitektur tertua di dunia dan <strong>satu-satunya dari 7 Keajaiban Dunia Kuno asli</strong> yang masih berdiri kokoh hingga abad ke-21. Dibangun sekitar tahun 2560 SM selama kurang lebih 27 tahun pada era Dinasti ke-4 Kerajaan Lama Mesir Kuno, piramida ini didedikasikan sebagai monumen keabadian dan makam bagi <strong>Firaun Khufu</strong> (dikenal orang Yunani sebagai Cheops), di bawah pengawasan arsitek kerajaan Wazir <strong>Hemiunu</strong>.</p>
+          <p>Piramida ini diberi nama kuno <em>Akhet Khufu</em> yang berarti "Cakrawala Khufu". Bangunan ini memegang rekor peradaban sebagai struktur buatan manusia tertinggi di muka bumi selama lebih dari 3.800 tahun lamanya, sebelum rekor tingginya akhirnya dilampaui oleh Katedral Lincoln di Inggris pada tahun 1311 Masehi.</p>
+
+          <div class="highlight-box">
+            "Manusia takut pada waktu, tetapi waktu takut pada piramida." — Pepatah Kuno Arab
+          </div>
+
+          <h3><i class="fa-solid fa-compass"></i> Presisi Geometri Astronomis & Hubungan Rasio Emas</h3>
+          <p>Tingkat akurasi pembangunan Piramida Agung membingungkan para insinyur dan astronom modern. Keempat sisi dasar piramida berorientasi tepat menghadap ke empat arah mata angin sejati (Utara Sejati, Selatan, Timur, Barat) dengan margin kesalahan deviasi kurang dari <strong>seperlima belas derajat (0,05 derajat)</strong>—suatu ketelitian astronomis luar biasa yang disejajarkan menggunakan pengamatan pergerakan bintang kutub purba Thuban.</p>
+          <p>Secara geometris, kemiringan sudut sisi piramida adalah 51°50'40". Proporsi ini menghasilkan rasio matematika di mana keliling dasar piramida dibagi dengan dua kali tingginya menghasilkan nilai yang sangat mendekati angka <strong>Pi (π ≈ 3,1416)</strong>, dan rasio tinggi bidang miring terhadap setengah panjang dasar menghasilkan perbandingan <strong>Rasio Emas (Golden Ratio, Phi ≈ 1,618)</strong> ribuan tahun sebelum konsep matematika ini diformulasikan oleh bangsa Yunani Kuno.</p>
+
+          <h3><i class="fa-solid fa-cubes"></i> Logistik 2,3 Juta Balok Batu & Sungai Nil Kuno</h3>
+          <p>Piramida Agung tersusun dari sekitar <strong>2,3 juta balok batu kapur dan granit</strong> dengan bobot total diperkirakan mencapai 6 juta ton. Rata-rata setiap balok batu berbobot 2,5 hingga 15 ton, bahkan balok-balok granit monolitik penyangga atap Kamar Raja memiliki bobot fantastis antara 25 hingga 50 ton per batang yang didatangkan dari tambang Aswan sejauh 800 kilometer ke arah selatan.</p>
+          <p>Penemuan dokumen papirus kuno di Wadi al-Jarf oleh arkeolog Pierre Tallet pada tahun 2013 (dikenal sebagai <em>Buku Harian Merer</em>) akhirnya memecahkan teka-teki logistik ini. Ribuan pekerja terampil dan berbayar mengangkut balok-balok batu kapur Tura putih berkilau melintasi jaringan kanal navigasi air buatan dari Sungai Nil kuno langsung menuju ke pelabuhan dermaga di kaki piramida selama musim banjir tahunan (*akhet*).</p>
+
+          <h3><i class="fa-solid fa-dungeon"></i> Labirin Ruang Internal & Penemuan Muon ScanPyramids</h3>
+          <p>Berbeda dari kebanyakan makam Mesir yang ruang pemakamannya dipahat di bawah tanah, Piramida Agung memiliki tiga kamar utama di dalam struktur batunya:</p>
+          <ul>
+            <li><strong>Kamar Bawah Tanah:</strong> Ruang yang dipahat di batuan dasar di bawah piramida yang dibiarkan belum selesai.</li>
+            <li><strong>Kamar Ratu:</strong> Ruang di tingkat tengah dengan atap pelana batu kapur.</li>
+            <li><strong>Grand Gallery:</strong> Lorong agung beratap lengkung corbelled setinggi 8,6 meter dan panjang 46 meter dengan akustik megah menuju kamar utama.</li>
+            <li><strong>Kamar Raja:</strong> Ruang pemakaman utama Firaun Khufu yang dibangun utuh dari granit merah Aswan, memuat sebuah sarkofagus batu monolitik tanpa tutup. Di atas atapnya terdapat 5 lapisan ruang peredam beban (*relieving chambers*) untuk mencegah runtuhnya kamar akibat beban jutaan ton batu di atasnya.</li>
+          </ul>
+          <p>Dari Kamar Raja dan Ratu terdapat poros-poros sempit (*air shafts*) yang mengarah tepat ke rasi bintang suci Orion (simbol Osiris, dewa kebangkitan) dan bintang Sirius (simbol dewi Isis). Pada tahun 2017 dan diperbarui 2023, konsorsium sains <em>ScanPyramids</em> menggunakan teknologi deteksi partikel sinar kosmik (*muon tomography*) dan menemukan rongga rahasia raksasa baru sepanjang lebih dari 30 meter (*The Big Void*) yang belum pernah terjamah manusia sejak zaman Firaun.</p>
+        `
+      },
+      {
+        id: "reog-ponorogo",
+        name: "Reog Ponorogo",
+        category: "jatim",
+        country: "Jawa Timur, Indonesia",
+        location: "Kabupaten Ponorogo",
+        year: "Abad ke-15 M",
+        civilization: "Kultur Ponorogo / Kerajaan Bantarangin",
+        image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+        tag: "Seni Topeng Sakral",
+        excerpt: "Seni pertunjukan teater tari kolosal tertua di Nusantara, menampilkan Singo Barong seberat 50 kg yang diangkat hanya dengan gigitan gigi, berpadu dengan kesaktian Warok dan kelincahan Jatil.",
+        specs: {
+          ikonUtama: "Topeng Dadak Merak (50–60 kg)",
+          tokohKunci: "Warok, Singo Barong, Jatil, Bujang Ganong",
+          maknaFilosofi: "Simbol Ksatria, Kritik Sosial, & Harmoni",
+          status: "Diusulkan Warisan Budaya Takbenda UNESCO"
+        },
+        article: `
+          <h3><i class="fa-solid fa-mask"></i> Mahakarya Seni Teater Topeng Terbesar di Dunia</h3>
+          <p>Reog Ponorogo adalah mahakarya seni pertunjukan tradisional terakbar di Nusantara yang memadukan teater tari kolosal, kekuatan fisik supranatural, seni bela diri pencak silat, serta musik gamelan laras slendro berirama senggol rancak yang memacu adrenalin. Berakar dari tanah Ponorogo di barat daya Jawa Timur, pertunjukan ini menampilkan puluhan penari dalam harmoni gerak teatrikal yang penuh energi dan magis.</p>
+          <p>Pertunjukan Reog telah melintasi berabad-abad generasi, bertransformasi dari media laku spiritual dan kritik sosial menjadi ikon kebudayaan nasional Indonesia yang dikagumi dunia internasional dan resmi diajukan ke UNESCO sebagai Warisan Budaya Takbenda Dunia kategori *Urgent Safeguarding List*.</p>
+
+          <div class="highlight-box">
+            "Dadak Merak—rangkaian mahkota raksasa bulu burung merak asli setinggi 2,5 meter dengan kepala macan seberat hingga 60 kilogram—ditopang hanya dengan gigitan gigi penari Barongan (penthangan) sambil melakukan gerakan akrobatik memukau."
+          </div>
+
+          <h3><i class="fa-solid fa-tooth"></i> Rahasia Kekuatan Penthangan Dadak Merak 60 Kg</h3>
+          <p>Bintang utama dalam pagelaran Reog adalah sosok <strong>Singo Barong</strong> yang mengenakan mahkota raksasa bernama <strong>Dadak Merak</strong>. Mahkota ini memiliki tinggi lebih dari 2,5 meter dan lebar 2 meter, tersusun dari kerangka anyaman bambu dan rotan yang dihiasi ribuan helai bulu burung merak jantan asli yang mekar anggun, dengan kepala harimau loreng yang dipahat dari kayu randu hutan berbalut kulit macan asli.</p>
+          <p>Bobot keseluruhan Dadak Merak mencapai <strong>50 hingga 60 kilogram</strong>. Luar biasanya, beban raksasa tersebut diangkat dan dimainkan oleh penari Barongan **hanya dengan menggunakan kekuatan gigitan rahang dan gigi** melalui sebuah kayu pegangan horizontal (*penthangan*) di balik topeng. Tanpa bantuan tali pengikat ke pundak, penari Barongan mampu meliuk-liuk, menari lincah, berputar kencang, bahkan menggendong penari Jatil di atas mahkota meraknya sambil berdiri tegak di tengah gelanggang.</p>
+
+          <h3><i class="fa-solid fa-scroll"></i> Asal Usul Sejarah: Satir Ki Ageng Kutu & Legenda Bantarangin</h3>
+          <p>Kesenian Reog Ponorogo memiliki dua akar tradisi sejarah yang sangat kuat:</p>
+          <ul>
+            <li><strong>Versi Satir Ki Ageng Kutu (Abad ke-15 M):</strong> Diciptakan oleh Ki Ageng Kutu (Demang Suryongalam) dari wilayah Wengker (Ponorogo kuno) sebagai bentuk kritik satir cerdas dan perlawanan kultural kepada Raja Majapahit terakhir, Prabu Brawijaya V (Bhre Kertabhumi). Kepala harimau melambangkan sang raja yang gagah perkasa namun tak berdaya di bawah kendali permaisurinya, Putri Campa, yang dilambangkan oleh burung merak anggun yang bertengger di atas kepala harimau.</li>
+            <li><strong>Versi Legenda Kerajaan Bantarangin:</strong> Mengisahkan sayembara pelamaran putri jelita Dewi Songgolangit dari Kerajaan Kediri oleh Prabu Kelono Sewandono dari Bantarangin Ponorogo. Sayembara mensyaratkan pertunjukan kesenian baru yang belum pernah ada di dunia, menampilkan hewan berkepala dua (singa dan merak) serta barisan pasukan kavaleri berkuda kembar.</li>
+          </ul>
+
+          <h3><i class="fa-solid fa-user-shield"></i> Filosofi Luhur Ksatria Warok & Tokoh Kunci</h3>
+          <p>Karakter-karakter dalam Reog merefleksikan tatanan moral dan keberagaman sifat manusia Jawa Timur:</p>
+          <ul>
+            <li><strong>Warok:</strong> Berasal dari kata <em>Wewarah</em> (pemberi ajaran budi pekerti luhur). Warok adalah ksatria berjiwa suci, menguasai ilmu kebatinan dan pencak silat, menjalani tapa brata, dan mengayomi masyarakat dengan integritas tanpa pamrih. Terdapat <em>Warok Tuo</em> yang berbusana serba hitam dan peningset putih sebagai tetua adat, serta <em>Warok Mudo</em> sebagai pendekar pelindung tanah air.</li>
+            <li><strong>Jatil:</strong> Prajurit kavaleri berkuda kepang yang melambangkan keanggunan, ketangkasan berkuda, dan loyalitas prajurit penjaga kedaulatan negeri.</li>
+            <li><strong>Bujang Ganong (Patih Pujangga Anom):</strong> Patih cerdik berparas jenaka dengan topeng merah bermata melotot dan berambut gimbal surai kuda. Ganong memadukan kecerdikan strategi dengan gerakan akrobatik jungkir balik yang lincah dan jenaka.</li>
+            <li><strong>Prabu Klono Sewandono:</strong> Raja sakti mandraguna bermahkota emas Makutho Katong, bersenjatakan cambuk pusaka sakti Kyai Samandiman yang mampu membelah samudra dan meruntuhkan angkara murka.</li>
+          </ul>
+        `
+      },
+      {
+        id: "yadnya-kasada",
+        name: "Upacara Yadnya Kasada Bromo",
+        category: "jatim",
+        country: "Jawa Timur, Indonesia",
+        location: "Kawah Gunung Bromo, Kaldera Tengger",
+        year: "Abad ke-14 M – Sekarang",
+        civilization: "Masyarakat Adat Suku Tengger (Hindu Dharma)",
+        image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=80",
+        tag: "Ritual Sakral Gunung Api",
+        excerpt: "Tradisi persembahan sakral suku Tengger keturunan Majapahit yang melarung hasil bumi dan ternak ke dalam kawah aktif Gunung Bromo di tengah keheningan malam purnama bulan Kasada.",
+        specs: {
+          waktuPelaksanaan: "Malam ke-14 Bulan Kasada (Purnama Penuh)",
+          lokasiIkonik: "Pura Luhur Poten & Bibir Kawah Aktif Bromo",
+          leluhurSuci: "Roro Anteng & Joko Seger (Raden Kusuma)",
+          status: "Warisan Budaya Takbenda Indonesia"
+        },
+        article: `
+          <h3><i class="fa-solid fa-volcano"></i> Janji Suci Abadi di Kawah Api Dewa Brahma</h3>
+          <p>Bagi masyarakat adat suku Tengger yang mendiami kawasan pegunungan Bromo-Tengger-Semeru di Jawa Timur, Gunung Bromo—berasal dari kata <em>Brahma</em>, sang dewa pencipta dalam agama Hindu—bukan sekadar objek bentang alam vulkanik, melainkan tempat bersemayam suci Sang Hyang Widhi dan roh leluhur agung mereka. Masyarakat suku Tengger adalah keturunan langsung bangsawan dan rakyat Kerajaan Majapahit yang mengungsi ke pegunungan tinggi pada abad ke-15 demi menjaga kemurnian keyakinan dan tradisi leluhur.</p>
+
+          <div class="highlight-box">
+            "Nama 'Tengger' dipetik dari gabungan suku kata terakhir nama sepasang leluhur suci mereka: Roro An-<strong>teng</strong> dan Joko Se-<strong>ger</strong>, simbol keteguhan iman, ketenangan batin, dan cinta abadi."
+          </div>
+
+          <h3><i class="fa-solid fa-fire"></i> Legenda Pengorbanan Luhur Raden Kusuma</h3>
+          <p>Dikisahkan bahwa Roro Anteng (putri keturunan Majapahit) dan Joko Seger (putra kasta Brahmana) telah bertahun-tahun membina rumah tangga di puncak Bromo namun belum dikaruniai keturunan. Mereka melakukan tapa brata di puncak kawah Bromo memohon berkah Sang Hyang Widhi Wasa. Dalam keheningan semadi, terdengar suara gaib bahwa mereka akan dianugerahi 25 anak, dengan satu syarat suci: anak bungsu harus dikembalikan sebagai persembahan kurban ke kawah Bromo demi menjaga keseimbangan alam semesta.</p>
+          <p>Ketika sang putra bungsu, <strong>Raden Kusuma</strong>, tumbuh menjadi pemuda yang rupawan, bijaksana, dan sakti, kawah Bromo mulai bergolak mengeluarkan asap belerang dan gempa vulkanik tanda janji suci harus ditepati. Demi menyelamatkan seluruh saudaranya dan rakyat Tengger dari ancaman petaka lahar api, Raden Kusuma dengan sukarela dan ikhlas melompat menceburkan diri ke dalam kawah berapi seraya berpesan: *"Wahai saudara-saudaraku, hiduplah damai, rawatlah bumi ini dengan baik, dan persembahkanlah sebagian hasil bumi dan ternak kalian ke kawah ini setiap tahun pada bulan Kasada saat malam bulan purnama."*</p>
+
+          <h3><i class="fa-solid fa-moon"></i> Prosesi Sakral Tengah Malam di Pura Luhur Poten</h3>
+          <p>Ritual Yadnya Kasada mencapai puncaknya pada malam ke-14 bulan Kasada dalam kalender tradisional Tengger (sekitar bulan Juni–Juli masehi). Rangkaian upacara diawali pada tengah malam di <strong>Pura Luhur Poten</strong>, sebuah pura berbahan batu andesit vulkanik alami yang berdiri anggun di tengah bentangan <em>Segara Wedi</em> (Lautan Pasir) berbisik di kaki Gunung Batok:</p>
+          <ul>
+            <li><strong>Pemberkatan Ongkek:</strong> Ribuan warga dari desa-desa di Probolinggo, Pasuruan, Malang, dan Lumajang membawa tandu sesaji (*ongkek*) berupa susunan gunungan sayur-mayur, padi, kentang, bunga edelweis, ayam, kambing, hingga koin persembahan yang telah disucikan.</li>
+            <li><strong>Muludan Dukun (Pelantikan Pandita):</strong> Calon Dukun Pandita suku Tengger diuji kemampuannya melafalkan seluruh mantra suci tanpa cela di hadapan dewan sesepuh adat sebelum resmi dilantik menjadi pemangku spiritual desa.</li>
+          </ul>
+
+          <h3><i class="fa-solid fa-wind"></i> Pelarungan ke Kawah & Tradisi Uncalan</h3>
+          <p>Menjelang fajar menyingsing saat kabut dingin menusuk tulang, ribuan peziarah mendaki 250 anak tangga menuju bibir kawah aktif Gunung Bromo yang membara. Dipimpin oleh para Dukun Pandita, sesaji *ongkek* dilarung dan dilemparkan langsung ke dalam kawah berasap belerang sebagai ungkapan syukur panen raya dan doa tolak bala keselamatan.</p>
+          <p>Di dinding curam bagian dalam kawah, berlangsung fenomena heroik dan unik bernama <strong>Uncalan</strong>: puluhan warga lokal berdiri di lereng terjal membawa jaring dan kain terpal untuk menangkap sesaji yang dilempar dari atas. Tangkapan sesaji tersebut dipercaya membawa berkah keberuntungan, mencerminkan indahnya kerukunan, gotong-royong, dan keharmonisan masyarakat Jawa Timur dengan alam semesta.</p>
+        `
+      },
+      {
+        id: "tari-gandrung",
+        name: "Tari Gandrung Banyuwangi",
+        category: "jatim",
+        country: "Jawa Timur, Indonesia",
+        location: "Kabupaten Banyuwangi (Bumi Blambangan)",
+        year: "± 1770 M (Era Pasca Perang Bayu)",
+        civilization: "Suku Osing Blambangan",
+        image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+        tag: "Tarian Dewi Kesuburan & Pejuang",
+        excerpt: "Ikon budaya Bumi Blambangan dengan mahkota Omprok keemasan bertatah kulit kerbau, bermula dari tarian pemujaan Dewi Sri hingga sandi spionase perjuangan rakyat Blambangan.",
+        specs: {
+          kostumKhas: "Mahkota Omprok Emas, Selendang Merah, & Kipas",
+          alatMusikIringan: "Kluncing, Kendang Osing, Kethuk, & Biola",
+          pagelaranAkbar: "Festival Kolosal Gandrung Sewu (1.200 Penari)",
+          status: "Warisan Budaya Takbenda Nasional"
+        },
+        article: `
+          <h3><i class="fa-solid fa-fan"></i> Pesona Mistis Penari di Ujung Timur Jawa</h3>
+          <p>Tari Gandrung adalah denyut nadi kultural paling membanggakan bagi masyarakat suku Osing di Kabupaten Banyuwangi (Bumi Blambangan), ujung timur Pulau Jawa. Kata <em>gandrung</em> bermakna terpesona, terpikat, atau jatuh cinta yang teramat mendalam. Awal mulanya, tarian ini lahir sebagai perwujudan cinta dan rasa syukur para petani agraris kepada <strong>Dewi Sri</strong> (Sang Hyang Sri Pohaci), dewi kesuburan dan padi atas limpahan panen raya yang memakmurkan rakyat.</p>
+
+          <div class="highlight-box">
+            "Festival kolosal 'Gandrung Sewu' mengumpulkan lebih dari seribu penari di bibir Pantai Boom dengan latar megah Selat Bali, memadukan formasi gerak kolosal yang menggetarkan jiwa."
+          </div>
+
+          <h3><i class="fa-solid fa-feather"></i> Peran Sejarah: Sandi Rahasia & Spionase Perang Bayu 1771</h3>
+          <p>Di balik kelembutan gerak tariannya, Gandrung menyimpan sejarah heroisme patriotik yang luar biasa. Pasca meletusnya <strong>Perang Bayu (Puputan Bayu)</strong> pada tahun 1771–1772 melawan penjajah VOC Belanda yang membumihanguskan tanah Blambangan, bupati pertama Banyuwangi, Mas Alit, memprakarsai kesenian keliling untuk menghibur dan menyatukan kembali sisa rakyat yang tercerai-berai mengungsi di rimba belantara Tembok Gede.</p>
+          <p>Pada masa itu, penari Gandrung adalah pemuda laki-laki bernama <strong>Marsan</strong> yang menyamar menjadi penari keliling. Sambil menari dan memukul kendang dari desa ke desa, penari Gandrung menyelipkan pesan kode sandi rahasia pergerakan gerilya, memetakan benteng pertahanan musuh, serta mengumpulkan pasokan beras dan logistik makanan untuk para pejuang Blambangan yang bergerilya di pedalaman hutan. Tradisi Gandrung perempuan baru dimulai pada akhir abad ke-19 melalui penari legendaris Semi.</p>
+
+          <h3><i class="fa-solid fa-crown"></i> Kemegahan Busana & Mahkota Sakral Omprok</h3>
+          <p>Ciri paling menonjol dari penari Gandrung adalah mahkota keemasan bernama <strong>Omprok</strong>. Mahkota ini terbuat dari tatahan kulit kerbau berlapir emas kuningan yang berhiaskan ornamen naga Antaboga (penguasa laut samudra) dan burung Garuda bersayap megah, dihiasi juntaian manik-manik emas serta roncean bunga kantil dan melati segar yang semerbak harum mewangi.</p>
+          <p>Busana penari terdiri dari kemben beludru hitam bersulam benang emas, kain batik gajah oling khas Banyuwangi, selendang merah menyala (*sampur*), serta kipas kertas emas yang dikibaskan dengan anggun mengikuti irama rancak orkestra tradisional Osing: alunan biola bernada melankolis, kendang gandrung dua sisi, sepasang kethuk, kempul, dan denting perkusi segitiga baja khas bernama <strong>Kluncing</strong>.</p>
+
+          <h3><i class="fa-solid fa-water"></i> Fenomena Kolosal Dunia: Gandrung Sewu di Pantai Boom</h3>
+          <p>Kini, Tari Gandrung telah bertransformasi menjadi salah satu atraksi seni budaya terakbar di panggung dunia melalui perhelatan tahunan <strong>Festival Gandrung Sewu</strong>. Lebih dari 1.200 penari dari berbagai pelosok daerah menari serempak di atas hamparan pasir Pantai Boom berlatar panorama Selat Bali dan langit senja yang dramatis, membentuk konfigurasi koreografi kolosal yang merefleksikan kejayaan masa lalu dan optimisme masa depan kebudayaan Jawa Timur.</p>
+        `
+      },
+      {
+        id: "karapan-sapi",
+        name: "Karapan Sapi Madura",
+        category: "jatim",
+        country: "Jawa Timur, Indonesia",
+        location: "Pulau Madura (Bangkalan, Sampang, Pamekasan, Sumenep)",
+        year: "Abad ke-13 M",
+        civilization: "Kultur Agraris Tradisional Madura",
+        image: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80",
+        tag: "Pacuan Prestisius Nusantara",
+        excerpt: "Adu pacu sepasang sapi jantan perkasa melesat di lintasan tanah 100 meter dalam hitungan detik, simbol kebanggaan, prestise harga diri, dan ketangguhan etos kerja Madura.",
+        specs: {
+          jarakLintasan: "100–120 Meter (Waktu Tempuh: 9–10 Detik)",
+          keretaPacu: "Kaleles Kayu Ukir Jati Khas Madura",
+          iringanMusik: "Orkestra Tiup Saronen & Gong Bertalu",
+          gelarPrestisius: "Piala Bergilir Presiden Republik Indonesia (Gubeng)"
+        },
+        article: `
+          <h3><i class="fa-solid fa-horse"></i> Melesat Secepat Angin di Tanah Garam Madura</h3>
+          <p>Karapan Sapi adalah pesta rakyat, kehormatan sosial, dan tradisi pacuan kecepatan paling spektakuler di Nusantara yang berasal dari Pulau Madura, Jawa Timur. Sepasang sapi jantan kekar menarik sebilah kereta kayu geser bernama <strong>Kaleles</strong>, dipandu oleh joki muda lincah yang bertelanjang kaki menyeimbangkan tubuhnya di atas lintasan tanah berdebu sepanjang 100 hingga 120 meter.</p>
+          <p>Pacuan berlangsung sangat singkat dan mendebarkan—hanya berkisar antara 9 hingga 11 detik—namun mampu membakar gelora sorak-sorai puluhan ribu penonton yang memadati stadion. Bagi orang Madura, Karapan Sapi bukan sekadar perlombaan ketangkasan ternak, melainkan pertaruhan harga diri, martabat keluarga (*prestige*), serta perayaan etos kerja keras yang pantang menyerah.</p>
+
+          <div class="highlight-box">
+            "Sapi Karapan mampu mencapai kecepatan fantastis lebih dari 45 km/jam, menuntaskan trek 100 meter dalam waktu sekitar 9 detik—lebih cepat dari rekor lari manusia tercepat di bumi!"
+          </div>
+
+          <h3><i class="fa-solid fa-wheat-awn"></i> Asal Usul Inovasi Agraris Kyai Pratanu (Pangeran Katandur)</h3>
+          <p>Tradisi ini berakar kuat dari sejarah agraris Madura pada abad ke-13 Masehi. Diceritakan seorang ulama arif di Sumenep bernama **Kyai Pratanu** (dikenal luas sebagai **Pangeran Katandur**, cucu Sunan Kudus). Melihat kondisi tanah daratan Pulau Madura yang berbatu kapur tandus dan kering, beliau memperkenalkan bajak tanah ganda yang ditarik sepasang lembu bernama *nanggala*.</p>
+          <p>Untuk membakar semangat para petani menggarap lahan tegalan mereka secara serentak sebelum musim penghujan usai, diadakanlah lomba ketangkasan membajak sawah antar-petani di desa. Kegiatan kerja bakti yang menggembirakan ini kelak berevolusi menjadi ajang adu kecepatan sapi pacu yang disebut *Karapan* (dari kata *kerap* atau *kirap* yang berarti bergerak beriringan bersama-sama).</p>
+
+          <h3><i class="fa-solid fa-crown"></i> Perawatan Istimewa Jamu Tradisional Bak Pangeran</h3>
+          <p>Sapi karapan (*sapi kerap*) diperlakukan sangat istimewa layaknya anggota keluarga bangsawan. Dipilih dari bibit ras sapi Madura asli dengan postur tubuh tegap, dada bidang, dan bulu merah bata mulus (*bambang*), sapi-sapi ini menjalani perawatan harian intensif:</p>
+          <ul>
+            <li><strong>Menu Nutrisi Telur & Rempah:</strong> Setiap hari, sepasang sapi karapan diberi puluhan butir telur ayam kampung mentah, madu lebah hutan murni, temulawak, jahe, kunyit, gula aren, dan ramuan arak beras khusus untuk memperkuat otot dan pernapasan.</li>
+            <li><strong>Latihan Fisik & Renang Pantai:</strong> Sapi dilatih berlari secara bertahap dan diajak berenang di pantai laut tenang untuk melatih kapasitas paru-paru serta merelaksasikan otot-otot kaki, diikuti pijatan minyak herbal oleh juru rawat khusus (*tukang tamba*).</li>
+          </ul>
+
+          <h3><i class="fa-solid fa-music"></i> Parade Kemegahan Budaya Saronen & Perebutan Piala Presiden</h3>
+          <p>Sebelum balapan dimulai, digelar parade kemegahan budaya (*parade sapi kerap*). Sapi-sapi dihiasi kalung manik-manik sutra, mahkota emas berkilau di atas tanduk, dan selendang permata, diarak mengelilingi stadion diiringi tiupan rancak terompet tiup kayu berirama meliuk-liuk bernama <strong>Saronen</strong> yang bertalu-talu membakar adrenalin.</p>
+          <p>Puncak dari seluruh turnamen adalah kejuaraan agung tahunan <strong>Piala Bergilir Presiden Republik Indonesia</strong> (Piala Gubeng) di Pamekasan, mempertemukan para jawara karapan terhebat dari empat kabupaten di Madura (Bangkalan, Sampang, Pamekasan, Sumenep) dalam perebutan supremasi kehormatan tertinggi tanah Jawa Timur.</p>
+        `
+      },
+      {
+        id: "kejayaan-majapahit",
+        name: "Kemegahan Kerajaan Majapahit",
+        category: "jatim",
+        country: "Jawa Timur, Indonesia",
+        location: "Trowulan (Mojokerto) & Candi Penataran (Blitar)",
+        year: "1293 – 1527 M",
+        civilization: "Kemaharajaan Maritim Majapahit",
+        image: "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1200&q=80",
+        tag: "Poros Kemaharajaan Nusantara",
+        excerpt: "Pusat imperium adidaya Asia Tenggara yang mempersatukan Nusantara dengan Sumpah Palapa Gajah Mada, melahirkan rekayasa arsitektur bata merah dan semboyan suci Bhinneka Tunggal Ika.",
+        specs: {
+          ibukotaKuno: "Metropolitan Trowulan (Mojokerto, Jawa Timur)",
+          candiUtama: "Candi Penataran, Gapura Bajang Ratu, Candi Brahu",
+          warisanFilosofi: "Bhinneka Tunggal Ika (Kakawin Sutasoma)",
+          status: "Kawasan Cagar Budaya Nasional & Pusat Peradaban"
+        },
+        article: `
+          <h3><i class="fa-solid fa-landmark-flag"></i> Imperium Megah Pemersatu Poros Maritim Nusantara</h3>
+          <p>Didirikan oleh <strong>Raden Wijaya</strong> (Kertarajasa Jayawardhana) pada tahun 1293 di hutan Tarik tepi Sungai Brantas setelah berhasil memukul mundur serbuan armada tentara Mongol (Dinasti Yuan) kiriman Kubilai Khan, Majapahit berkembang menjadi imperium kemaharajaan maritim terbesar dan paling adidaya dalam sejarah peradaban Asia Tenggara.</p>
+          <p>Majapahit mencapai puncak keemasan di bawah kepemimpinan Maharaja <strong>Hayam Wuruk</strong> (Sri Rajasanagara) yang didampingi oleh Mahapatih Amangkubhumi yang legendaris, <strong>Gajah Mada</strong> (1350–1389 M). Jalur perdagangan laut dan pengaruh diplomasi Majapahit (*Mitreka Satata*) membentang dari Semenanjung Malaya, Sumatra, Kalimantan, Sulawesi, Maluku, hingga pesisir Papua.</p>
+
+          <div class="highlight-box">
+            "Dari tanah Majapahit di Jawa Timur-lah lahir semboyan abadi Republik Indonesia: 'Bhinneka Tunggal Ika Tan Hana Dharma Mangrwa' (Berbeda-beda tetapi tetap satu jua, tiada kebenaran yang mendua), yang digubah oleh pujangga agung Mpu Tantular dalam kitab Kakawin Sutasoma."
+          </div>
+
+          <h3><i class="fa-solid fa-monument"></i> Trowulan: Metropolitan Kuno Berarsitektur Bata Merah Canggih</h3>
+          <p>Situs Trowulan di Mojokerto, Jawa Timur, seluas 99 kilometer persegi adalah saksi bisu kejeniusan tata kota kuno Majapahit yang sangat maju dan terencana:</p>
+          <ul>
+            <li><strong>Kanal Navigasi & Kolam Segaran:</strong> Kota dibelah oleh jaringan kanal air buatan berbata merah yang berfungsi sebagai saluran drainase banjir serta jalan transportasi perahu menuju Sungai Brantas. Terdapat waduk raksasa <strong>Kolam Segaran</strong> berukuran 375 × 175 meter seluas 6,5 hektar dengan dinding bata merah tebal untuk penampungan cadangan air kota dan jamuan tamu kenegaraan.</li>
+            <li><strong>Sanitasi Pipa Terakota:</strong> Pemukiman kota dilengkapi dengan pipa-pipa air terakota (*jobong*) bawah tanah serta sumur-sumur resapan air bersih yang tertata higienis.</li>
+            <li><strong>Gerbang Monumental Megah:</strong>
+              - <strong>Gapura Bajang Ratu:</strong> Pintu gerbang beratap paduraksa setinggi 16,5 meter dari bata merah berkualitas tinggi berpahat relief sayap burung garuda pelindung.
+              - <strong>Gapura Wringin Lawang:</strong> Gerbang candi bentar (terbelah dua simetris) setinggi 15,5 meter yang menjadi pintu gerbang protokoler agung memasuki kompleks istana kedaton Majapahit.
+              - <strong>Candi Tikus:</strong> Kompleks petirtaan permandian kerajaan bawah tanah dengan miniatur candi di tengah kolam sumber air suci.
+            </li>
+          </ul>
+
+          <h3><i class="fa-solid fa-hands-praying"></i> Candi Penataran: Pura Suci Kerajaan di Lereng Kelud</h3>
+          <p>Kompleks <strong>Candi Penataran (Candi Palah)</strong> di Blitar merupakan kompleks percandian Hindu-Siwa terluas dan termegah di Jawa Timur. Berdiri di lereng barat daya Gunung Kelud pada ketinggian 450 mdpl, candi ini menjadi pusat peribadatan resmi kenegaraan para raja Majapahit untuk memuja Dewa Gunung penguasa Kelud demi memohon keselamatan negeri dari ancaman bencana letusan gunung api.</p>
+          <p>Dinding candi Penataran dihiasi relief naratif epos <em>Ramayana</em> dan <em>Kresnayana</em> yang dipahat dengan gaya distorsi wayang kulit (*wayang style*) khas Jawa Timur yang sangat ekspresif, luwes, dan sarat muatan mistisisme spiritual. Candi ini menjadi lambang puncak kejayaan seni rupa dan toleransi beragama yang luhur warisan leluhur bangsa Indonesia.</p>
+        `
+      }
+    ];
+
+    /* --------------------------------------------------------------------------
+       FAKTA ANEKA KEAJAIBAN DUNIA & JAWA TIMUR (RANDOM FACTS)
+       -------------------------------------------------------------------------- */
+    const randomFacts = [
+      "Perekat yang digunakan untuk menyusun bebatuan di Tembok Besar Cina pada masa Dinasti Ming mengandung bubur ketan yang dicampur dengan kapur tohor!",
+      "Topeng Dadak Merak Reog Ponorogo memiliki tinggi 2,5 meter dan berat 50-60 kg, namun ditopang penari Barongan hanya dengan kekuatan gigitan gigi (penthangan)!",
+      "Di Colosseum Roma, sistem tirai kanvas raksasa bernama Velarium dioperasikan oleh para pelaut angkatan laut Romawi untuk memayungi penonton dari terik matahari.",
+      "Sapi pacuan Karapan Sapi Madura mampu melesat hingga 45 km/jam, menuntaskan trek 100 meter hanya dalam tempo sekitar 9 detik!",
+      "Kota Petra di Yordania hanya sekitar 15% yang telah digali oleh arkeolog; 85% sisanya masih terkubur di bawah pasir gurun tandus.",
+      "Semboyan pemersatu bangsa Indonesia 'Bhinneka Tunggal Ika' lahir di Jawa Timur dari kitab Kakawin Sutasoma karya Mpu Tantular pada zaman keemasan Majapahit.",
+      "Jika seluruh balok batu di Piramida Giza dipotong menjadi kubus berukuran satu kaki, barisan kubus tersebut dapat melingkari bumi hingga dua pertiga putaran!",
+      "Tari Gandrung Banyuwangi awalnya diperankan oleh penari pria yang menyamar untuk menyampaikan sandi rahasia perjuangan Perang Bayu melawan kolonial Belanda.",
+      "Taj Mahal dibangun dengan fondasi balok kayu ebony khusus di dasar sumur-sumur air. Fondasi ini membutuhkan kelembapan alami sungai Yamuna agar tidak mengering dan rapuh.",
+      "Candi Borobudur terdiri dari 55.000 meter kubik batu andesit yang diambil dari dasar sungai-sungai purba di sekeliling lembah Progo."
+    ];
+
+    /* --------------------------------------------------------------------------
+       KUIS INTERAKTIF
+       -------------------------------------------------------------------------- */
+    const quizQuestions = [
+      {
+        question: "Bahan organik unik apakah yang dicampurkan ke dalam adukan mortar pada era Dinasti Ming untuk merekatkan bebatuan Tembok Besar Cina?",
+        options: ["Madu Hutan", "Bubur Ketan", "Getah Pohon Karet", "Minyak Zaitun"],
+        answer: 1,
+        explanation: "Benar! Senyawa amilopektin pada beras ketan memberikan sifat elastis dan daya rekat kuat tahan gempa."
+      },
+      {
+        question: "Berapakah perkiraan berat topeng raksasa Dadak Merak Reog Ponorogo yang diangkat penari hanya dengan gigitan gigi?",
+        options: ["10 – 15 Kilogram", "20 – 25 Kilogram", "50 – 60 Kilogram", "80 – 90 Kilogram"],
+        answer: 2,
+        explanation: "Tepat sekali! Topeng raksasa berkepala macan dan bulu merak ini berbobot 50 hingga 60 kg dan diangkat dengan kekuatan rahang (penthangan)."
+      },
+      {
+        question: "Apakah nama julukan terkenal bagi kota kuno Petra di Yordania karena warna batu tebingnya?",
+        options: ["The Golden Oasis", "The Rose City (Kota Mawar)", "The Emerald Valley", "The Sun Citadel"],
+        answer: 1,
+        explanation: "Tepat sekali! Warna batu pasir alaminya yang bernuansa merah muda hingga ungu membuat Petra dijuluki 'The Rose City'."
+      },
+      {
+        question: "Di manakah masyarakat suku Tengger melarung sesaji hasil bumi dan hewan ternak saat Upacara Yadnya Kasada?",
+        options: ["Danau Ranu Kumbolo", "Kawah Aktif Gunung Bromo", "Puncak Gunung Semeru", "Air Terjun Madakaripura"],
+        answer: 1,
+        explanation: "Tepat! Sesaji dilarung langsung ke dalam kawah aktif Gunung Bromo sebagai persembahan suci dan penghormatan janji Raden Kusuma."
+      },
+      {
+        question: "Suku peradaban manakah yang membangun kota suci Machu Picchu di puncak pegunungan Andes?",
+        options: ["Suku Aztek", "Suku Maya", "Suku Inka", "Suku Olmek"],
+        answer: 2,
+        explanation: "Tepat! Bangsa Inka membangun Machu Picchu sekitar tahun 1450 Masehi di bawah pimpinan Kaisar Pachacuti."
+      },
+      {
+        question: "Dari kitab karya Mpu Tantular pada era Majapahit manakah semboyan 'Bhinneka Tunggal Ika' berasal?",
+        options: ["Kakawin Bharatayuddha", "Kakawin Negarakretagama", "Kakawin Sutasoma", "Serat Centhini"],
+        answer: 2,
+        explanation: "Luar biasa! Semboyan 'Bhinneka Tunggal Ika Tan Hana Dharma Mangrwa' dipetik dari pupuh Kakawin Sutasoma karya Mpu Tantular."
+      },
+      {
+        question: "Manakah satu-satunya dari 7 Keajaiban Dunia Kuno yang masih berdiri tegak hingga hari ini?",
+        options: ["Taman Gantung Babilonia", "Mercusuar Alexandria", "Patung Kolosus Rodos", "Piramida Agung Giza"],
+        answer: 3,
+        explanation: "Tepat! Piramida Giza adalah satu-satunya keajaiban kuno yang selamat melintasi ribuan tahun."
+      }
+    ];
+
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let bookmarks = JSON.parse(localStorage.getItem('hasina_bookmarks') || localStorage.getItem('mirabilia_bookmarks') || '[]');
+
+    /* --------------------------------------------------------------------------
+       RENDER CARDS
+       -------------------------------------------------------------------------- */
+    const cardsContainer = document.getElementById('cards-container');
+
+    function renderCards(filter = 'all', searchQuery = '') {
+      cardsContainer.innerHTML = '';
+
+      const filtered = wondersData.filter(item => {
+        const matchesCategory = (filter === 'all') || (item.category === filter);
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              item.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              item.civilization.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        cardsContainer.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 4rem 1rem;">
+            <i class="fa-solid fa-compass" style="font-size: 3rem; color: var(--text-dim); margin-bottom: 1rem;"></i>
+            <h3 style="color: white; font-family: var(--font-display);">Tidak Ada Keajaiban yang Ditemukan</h3>
+            <p style="color: var(--text-muted);">Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const isSaved = bookmarks.includes(item.id);
+        const card = document.createElement('article');
+        card.className = 'wonder-card';
+        card.innerHTML = `
+          <div class="card-media">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" />
+            <div class="card-media-overlay"></div>
+            <div class="card-tag"><i class="fa-solid fa-monument"></i> ${item.tag}</div>
+            <button class="card-bookmark-btn ${isSaved ? 'saved' : ''}" onclick="toggleBookmark('${item.id}', this)" title="Simpan ke Favorit">
+              <i class="fa-${isSaved ? 'solid' : 'regular'} fa-bookmark"></i>
+            </button>
+            <div class="card-location">
+              <i class="fa-solid fa-location-dot" style="color: var(--gold-primary);"></i>
+              ${item.location}, ${item.country}
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <span class="card-era-badge">${item.civilization} &bull; ${item.year}</span>
+            <h3 class="card-title">${item.name}</h3>
+            <p class="card-excerpt">${item.excerpt}</p>
+            
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-label">Warisan</span>
+                <span class="spec-value">UNESCO</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Wilayah</span>
+                <span class="spec-value">${item.country}</span>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <button class="btn-read-more" onclick="openModal('${item.id}')">
+                Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button class="share-pill" onclick="shareWonder('${item.name}', '${item.country}')" title="Bagikan">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+            </div>
+          </div>
+        `;
+        cardsContainer.appendChild(card);
+      });
+    }
+
+    /* --------------------------------------------------------------------------
+       MODAL POPUP DETAIL ARTICLE
+       -------------------------------------------------------------------------- */
+    const modal = document.getElementById('article-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    function openModal(wonderId) {
+      const wonder = wondersData.find(w => w.id === wonderId);
+      if (!wonder) return;
+
+      document.getElementById('modal-img').src = wonder.image;
+      document.getElementById('modal-img').alt = wonder.name;
+      document.getElementById('modal-badge').innerText = wonder.tag;
+      document.getElementById('modal-year').innerText = `${wonder.civilization} (${wonder.year})`;
+      document.getElementById('modal-title').innerText = wonder.name;
+      document.getElementById('modal-location').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${wonder.location}, ${wonder.country} &bull; Status: ${wonder.specs.status}`;
+      document.getElementById('modal-body').innerHTML = wonder.article;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    /* --------------------------------------------------------------------------
+       FILTER TABS & SEARCH
+       -------------------------------------------------------------------------- */
+    const tabPills = document.querySelectorAll('.tab-pill');
+    let currentFilter = 'all';
+
+    tabPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        tabPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentFilter = pill.getAttribute('data-filter');
+        const searchVal = document.getElementById('wonder-search').value;
+        renderCards(currentFilter, searchVal);
+      });
+    });
+
+    document.getElementById('wonder-search').addEventListener('input', (e) => {
+      renderCards(currentFilter, e.target.value);
+    });
+
+    /* --------------------------------------------------------------------------
+       BOOKMARKS SYSTEM (LOCALSTORAGE)
+       -------------------------------------------------------------------------- */
+    const bookmarkBadge = document.getElementById('bookmark-badge');
+    const bookmarksDrawer = document.getElementById('bookmarks-drawer');
+    const bookmarkBtn = document.getElementById('bookmark-drawer-btn');
+    const bookmarksClose = document.getElementById('bookmarks-close');
+    const bookmarksList = document.getElementById('bookmarks-list');
+
+    function updateBookmarkCount() {
+      bookmarkBadge.innerText = bookmarks.length;
+      renderBookmarksList();
+    }
+
+    function toggleBookmark(wonderId, btnEl) {
+      const idx = bookmarks.indexOf(wonderId);
+      if (idx > -1) {
+        bookmarks.splice(idx, 1);
+        if (btnEl) {
+          btnEl.classList.remove('saved');
+          btnEl.querySelector('i').className = 'fa-regular fa-bookmark';
+        }
+      } else {
+        bookmarks.push(wonderId);
+        if (btnEl) {
+          btnEl.classList.add('saved');
+          btnEl.querySelector('i').className = 'fa-solid fa-bookmark';
+        }
+      }
+      localStorage.setItem('hasina_bookmarks', JSON.stringify(bookmarks));
+      updateBookmarkCount();
+    }
+
+    function renderBookmarksList() {
+      bookmarksList.innerHTML = '';
+      if (bookmarks.length === 0) {
+        bookmarksList.innerHTML = `
+          <div style="text-align: center; color: var(--text-dim); padding: 3rem 1rem;">
+            <i class="fa-regular fa-bookmark" style="font-size: 2.5rem; margin-bottom: 0.8rem;"></i>
+            <p>Belum ada keajaiban yang disimpan.</p>
+          </div>
+        `;
+        return;
+      }
+
+      bookmarks.forEach(id => {
+        const item = wondersData.find(w => w.id === id);
+        if (!item) return;
+
+        const row = document.createElement('div');
+        row.className = 'bookmark-item';
+        row.innerHTML = `
+          <img src="${item.image}" class="bookmark-thumb" alt="${item.name}" />
+          <div class="bookmark-info" style="flex-grow: 1;">
+            <h5>${item.name}</h5>
+            <p>${item.country}</p>
+          </div>
+          <button class="icon-btn" style="width: 32px; height: 32px;" onclick="openModal('${item.id}')" title="Baca">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        `;
+        bookmarksList.appendChild(row);
+      });
+    }
+
+    function clearBookmarks() {
+      bookmarks = [];
+      localStorage.removeItem('hasina_bookmarks');
+      localStorage.removeItem('mirabilia_bookmarks');
+      updateBookmarkCount();
+      renderCards(currentFilter, document.getElementById('wonder-search').value);
+    }
+
+    bookmarkBtn.addEventListener('click', () => {
+      bookmarksDrawer.classList.add('open');
+      document.getElementById('drawer-overlay').classList.add('active');
+    });
+
+    bookmarksClose.addEventListener('click', () => {
+      bookmarksDrawer.classList.remove('open');
+      document.getElementById('drawer-overlay').classList.remove('active');
+    });
+
+    /* --------------------------------------------------------------------------
+       MOBILE NAVIGATION DRAWER
+       -------------------------------------------------------------------------- */
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const drawerClose = document.getElementById('drawer-close');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+
+    function openMobileDrawer() {
+      mobileDrawer.classList.add('open');
+      drawerOverlay.classList.add('active');
+    }
+
+    function closeMobileDrawer() {
+      mobileDrawer.classList.remove('open');
+      bookmarksDrawer.classList.remove('open');
+      drawerOverlay.classList.remove('active');
+    }
+
+    mobileToggle.addEventListener('click', openMobileDrawer);
+    drawerClose.addEventListener('click', closeMobileDrawer);
+    drawerOverlay.addEventListener('click', closeMobileDrawer);
+
+    document.querySelectorAll('.drawer-nav-item').forEach(link => {
+      link.addEventListener('click', closeMobileDrawer);
+    });
+
+    /* --------------------------------------------------------------------------
+       QUIZ ENGINE
+       -------------------------------------------------------------------------- */
+    const quizQuestionEl = document.getElementById('quiz-question');
+    const quizOptionsEl = document.getElementById('quiz-options');
+    const quizFeedbackEl = document.getElementById('quiz-feedback');
+    const btnNextQuiz = document.getElementById('btn-next-quiz');
+
+    function loadQuiz(index) {
+      if (index >= quizQuestions.length) {
+        quizQuestionEl.innerHTML = `🎉 Selamat! Anda telah menyelesaikan seluruh kuis!`;
+        quizOptionsEl.innerHTML = `
+          <div style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--border-gold); padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
+            <h4 style="font-family: var(--font-display); color: var(--gold-light); font-size: 1.4rem;">Skor Anda: ${quizScore} / ${quizQuestions.length}</h4>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">${quizScore === quizQuestions.length ? 'Luar biasa! Pengetahuan sejarah Anda setara kurator museum!' : 'Hebat! Teruslah membaca dan menjelajah khazanah dunia.'}</p>
+          </div>
+        `;
+        quizFeedbackEl.style.display = 'none';
+        btnNextQuiz.style.display = 'none';
+        return;
+      }
+
+      const q = quizQuestions[index];
+      quizQuestionEl.innerText = `${index + 1}. ${q.question}`;
+      quizOptionsEl.innerHTML = '';
+      quizFeedbackEl.style.display = 'none';
+      btnNextQuiz.style.display = 'none';
+
+      q.options.forEach((opt, optIndex) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle"></i>`;
+        btn.addEventListener('click', () => handleAnswer(optIndex, btn));
+        quizOptionsEl.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(selectedIndex, clickedBtn) {
+      const q = quizQuestions[currentQuizIndex];
+      const allBtns = quizOptionsEl.querySelectorAll('.quiz-opt-btn');
+      allBtns.forEach(btn => btn.style.pointerEvents = 'none');
+
+      if (selectedIndex === q.answer) {
+        clickedBtn.classList.add('correct');
+        clickedBtn.querySelector('i').className = 'fa-solid fa-circle-check';
+        quizFeedbackEl.innerHTML = `<i class="fa-solid fa-check"></i> ${q.explanation}`;
+        quizFeedbackEl.style.background = 'rgba(34, 197, 94, 0.15)';
+        quizFeedbackEl.style.color = '#86efac';
+        quizScore++;
+      } else {
+        clickedBtn.classList.add('wrong');
+        clickedBtn.querySelector('i').className = 'fa-solid fa-circle-xmark';
+        allBtns[q.answer].classList.add('correct');
+        allBtns[q.answer].querySelector('i').className = 'fa-solid fa-circle-check';
+        quizFeedbackEl.innerHTML = `<i class="fa-solid fa-circle-info"></i> ${q.explanation}`;
+        quizFeedbackEl.style.background = 'rgba(239, 68, 68, 0.15)';
+        quizFeedbackEl.style.color = '#fca5a5';
+      }
+
+      quizFeedbackEl.style.display = 'block';
+      btnNextQuiz.style.display = 'inline-flex';
+    }
+
+    btnNextQuiz.addEventListener('click', () => {
+      currentQuizIndex++;
+      loadQuiz(currentQuizIndex);
+    });
+
+    /* --------------------------------------------------------------------------
+       RANDOM FACT SHUFFLER
+       -------------------------------------------------------------------------- */
+    const randomFactText = document.getElementById('random-fact-text');
+    const btnShuffleFact = document.getElementById('btn-shuffle-fact');
+
+    btnShuffleFact.addEventListener('click', () => {
+      btnShuffleFact.style.transform = 'rotate(180deg)';
+      setTimeout(() => { btnShuffleFact.style.transform = ''; }, 350);
+      const randomIndex = Math.floor(Math.random() * randomFacts.length);
+      randomFactText.style.opacity = '0';
+      setTimeout(() => {
+        randomFactText.innerText = randomFacts[randomIndex];
+        randomFactText.style.opacity = '1';
+      }, 200);
+    });
+
+    /* --------------------------------------------------------------------------
+       SHARE FUNCTIONALITY
+       -------------------------------------------------------------------------- */
+    function shareWonder(name, country) {
+      if (navigator.share) {
+        navigator.share({
+          title: `Keajaiban & Budaya: ${name}`,
+          text: `Temukan sejarah dan keagungan spektakuler ${name} (${country}) pada portal HASINA.`,
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert(`Tautan artikel "${name}" telah disalin ke papan klip!`);
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       VIEW SWITCHER (Anti-Long Scroll Panel System)
+       -------------------------------------------------------------------------- */
+    function switchView(viewName) {
+      const tabBtns = document.querySelectorAll('.view-tab-btn');
+      tabBtns.forEach(btn => {
+        const target = btn.getAttribute('data-target');
+        if ((viewName === 'all' && target === 'view-all') ||
+            (target === `view-panel-${viewName}`)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      const panels = document.querySelectorAll('.view-panel');
+      panels.forEach(panel => {
+        if (viewName === 'all') {
+          panel.classList.add('active');
+        } else if (panel.id === `view-panel-${viewName}`) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+
+      // Smooth scroll to view switcher container
+      const switcher = document.querySelector('.view-switcher-container');
+      if (switcher) {
+        const yOffset = -70;
+        const y = switcher.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       THEME & PASTEL PALETTE ENGINE
+       -------------------------------------------------------------------------- */
+    function setBaseMode(mode) {
+      const htmlEl = document.documentElement;
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const darkBtn = document.getElementById('modal-mode-dark');
+      const lightBtn = document.getElementById('modal-mode-light');
+
+      if (mode === 'light') {
+        htmlEl.setAttribute('data-theme', 'light');
+        if (themeToggleBtn) {
+          themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+          themeToggleBtn.setAttribute('title', 'Beralih ke Dark Mode');
+        }
+        if (lightBtn) lightBtn.classList.add('active');
+        if (darkBtn) darkBtn.classList.remove('active');
+      } else {
+        htmlEl.removeAttribute('data-theme');
+        if (themeToggleBtn) {
+          themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+          themeToggleBtn.setAttribute('title', 'Beralih ke Light Mode');
+        }
+        if (darkBtn) darkBtn.classList.add('active');
+        if (lightBtn) lightBtn.classList.remove('active');
+      }
+      localStorage.setItem('hasina_theme_mode', mode);
+    }
+
+    function setPastelColor(paletteName) {
+      const htmlEl = document.documentElement;
+      if (paletteName && paletteName !== 'gold') {
+        htmlEl.setAttribute('data-pastel', paletteName);
+      } else {
+        htmlEl.removeAttribute('data-pastel');
+      }
+
+      document.querySelectorAll('.pastel-swatch-btn').forEach(btn => {
+        if (btn.getAttribute('data-pastel') === paletteName) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      localStorage.setItem('hasina_pastel_color', paletteName);
+    }
+
+    const themeModal = document.getElementById('theme-modal');
+    const paletteTriggerBtn = document.getElementById('palette-trigger-btn');
+    const themeModalClose = document.getElementById('theme-modal-close');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (paletteTriggerBtn) {
+      paletteTriggerBtn.addEventListener('click', () => {
+        if (themeModal) themeModal.classList.add('active');
+      });
+    }
+
+    if (themeModalClose) {
+      themeModalClose.addEventListener('click', () => {
+        if (themeModal) themeModal.classList.remove('active');
+      });
+    }
+
+    if (themeModal) {
+      themeModal.addEventListener('click', (e) => {
+        if (e.target === themeModal) themeModal.classList.remove('active');
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && themeModal && themeModal.classList.contains('active')) {
+        themeModal.classList.remove('active');
+      }
+    });
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentMode = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        setBaseMode(currentMode === 'light' ? 'dark' : 'light');
+      });
+    }
+
+    /* --------------------------------------------------------------------------
+       SCROLL PROGRESS & NAVBAR SHADOW
+       -------------------------------------------------------------------------- */
+    const progressBar = document.getElementById('progress-bar');
+    const navbar = document.getElementById('navbar');
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + "%";
+
+      if (winScroll > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* --------------------------------------------------------------------------
+       AMBIENT SOUND GENERATOR (Web Audio API Synthesizer - Works Offline!)
+       -------------------------------------------------------------------------- */
+    let audioCtx = null;
+    let isSoundOn = false;
+    let osc1, osc2, gainNode;
+
+    const soundBtn = document.getElementById('sound-toggle-btn');
+    const soundIcon = document.getElementById('sound-icon');
+
+    function toggleAmbientSound() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      if (isSoundOn) {
+        gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0.5);
+        setTimeout(() => {
+          if (osc1) osc1.stop();
+          if (osc2) osc2.stop();
+        }, 500);
+        isSoundOn = false;
+        soundIcon.className = 'fa-solid fa-volume-xmark';
+      } else {
+        audioCtx.resume();
+        osc1 = audioCtx.createOscillator();
+        osc2 = audioCtx.createOscillator();
+        gainNode = audioCtx.createGain();
+
+        // Harmonics for a calming temple drone (A2 110Hz + E3 165Hz)
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(110, audioCtx.currentTime);
+        osc2.type = 'triangle';
+        osc2.frequency.setValueAtTime(165, audioCtx.currentTime);
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(350, audioCtx.currentTime);
+
+        osc1.connect(filter);
+        osc2.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+
+        gainNode.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 2);
+
+        osc1.start();
+        osc2.start();
+        isSoundOn = true;
+        soundIcon.className = 'fa-solid fa-volume-high';
+      }
+    }
+
+    soundBtn.addEventListener('click', toggleAmbientSound);
+
+    /* --------------------------------------------------------------------------
+       RENDER JAWA TIMUR SPECIAL SECTION
+       -------------------------------------------------------------------------- */
+    function renderJatimCards() {
+      const jatimContainer = document.getElementById('jatim-cards-container');
+      if (!jatimContainer) return;
+      jatimContainer.innerHTML = '';
+
+      const jatimList = wondersData.filter(item => item.category === 'jatim');
+      jatimList.forEach(item => {
+        const isSaved = bookmarks.includes(item.id);
+        const card = document.createElement('article');
+        card.className = 'wonder-card';
+        card.innerHTML = `
+          <div class="card-media">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" />
+            <div class="card-media-overlay"></div>
+            <div class="card-tag"><i class="fa-solid fa-gem"></i> ${item.tag}</div>
+            <button class="card-bookmark-btn ${isSaved ? 'saved' : ''}" onclick="toggleBookmark('${item.id}', this)" title="Simpan ke Favorit">
+              <i class="fa-${isSaved ? 'solid' : 'regular'} fa-bookmark"></i>
+            </button>
+            <div class="card-location">
+              <i class="fa-solid fa-location-dot" style="color: var(--gold-primary);"></i>
+              ${item.location}
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <span class="card-era-badge">${item.civilization} &bull; ${item.year}</span>
+            <h3 class="card-title">${item.name}</h3>
+            <p class="card-excerpt">${item.excerpt}</p>
+            
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-label">Khazanah</span>
+                <span class="spec-value">Jawa Timur</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Kategori</span>
+                <span class="spec-value">Budaya Luhur</span>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <button class="btn-read-more" onclick="openModal('${item.id}')">
+                Baca Artikel Budaya <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button class="share-pill" onclick="shareWonder('${item.name}', '${item.country}')" title="Bagikan">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+            </div>
+          </div>
+        `;
+        jatimContainer.appendChild(card);
+      });
+    }
+
+    /* --------------------------------------------------------------------------
+       AUTO-SYNC & REAL-TIME VERSION CHECKER
+       -------------------------------------------------------------------------- */
+    let currentAppVersion = "1.1.0";
+
+    function showSyncToast(message, autoReload = true) {
+      let toast = document.getElementById('sync-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'sync-toast';
+        toast.className = 'sync-toast';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <span>${message}</span>
+      `;
+      toast.classList.add('active');
+
+      if (autoReload) {
+        setTimeout(() => {
+          window.location.reload(true);
+        }, 1800);
+      }
+    }
+
+    async function checkVersionUpdate() {
+      if (!window.location.protocol.startsWith('http')) return;
+      try {
+        const res = await fetch(`version.json?_t=${Date.now()}`, { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.version && data.version !== currentAppVersion) {
+          currentAppVersion = data.version;
+          showSyncToast("✨ Artikel baru diperbarui oleh Hasina! Memuat versi terbaru...", true);
+        }
+      } catch (e) {
+        // Network offline or file not found
+      }
+    }
+
+    async function initVersionCheck() {
+      if (!window.location.protocol.startsWith('http')) return;
+      try {
+        const res = await fetch(`version.json?_t=${Date.now()}`, { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.version) currentAppVersion = data.version;
+        }
+      } catch (e) {}
+
+      setInterval(checkVersionUpdate, 20000);
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          checkVersionUpdate();
+        }
+      });
+    }
+
+    /* --------------------------------------------------------------------------
+       INITIALIZATION
+       -------------------------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Restore saved themes
+      const savedMode = localStorage.getItem('hasina_theme_mode') || 'dark';
+      setBaseMode(savedMode);
+      const savedPastel = localStorage.getItem('hasina_pastel_color') || 'gold';
+      setPastelColor(savedPastel);
+
+      renderCards('all');
+      renderJatimCards();
+      updateBookmarkCount();
+      loadQuiz(0);
+      initVersionCheck();
+    });
+  </script>
+</body>
+</html>
