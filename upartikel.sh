@@ -21,14 +21,31 @@ echo "   🪶 HASINA — AUTO SYNC & UPLOAD ARTIKEL KE GITHUB SERVER"
 echo "=================================================================="
 echo -e "${C_RESET}"
 
-PROJECT_DIR="/storage/emulated/0/Project Artikel/Tema keajaiban dunia"
+# Deteksi lokasi folder proyek melalui berbagai kemungkinan path di Android/Termux
+PROJECT_DIR=""
+POSSIBLE_DIRS=(
+  "/storage/emulated/0/Project Artikel/Tema keajaiban dunia"
+  "/sdcard/Project Artikel/Tema keajaiban dunia"
+  "$HOME/storage/shared/Project Artikel/Tema keajaiban dunia"
+  "/data/data/com.termux/files/home/keajaiban-dunia"
+  "$HOME/keajaiban-dunia"
+)
 
-if [ ! -d "$PROJECT_DIR" ]; then
-  echo -e "${C_RED}❌ Folder proyek tidak ditemukan di:${C_RESET} $PROJECT_DIR"
+for dir in "${POSSIBLE_DIRS[@]}"; do
+  if [ -d "$dir" ]; then
+    PROJECT_DIR="$dir"
+    break
+  fi
+done
+
+if [ -z "$PROJECT_DIR" ]; then
+  echo -e "${C_RED}❌ Folder proyek tidak ditemukan!${C_RESET}"
+  echo "Periksa apakah folder 'Project Artikel/Tema keajaiban dunia' ada di memori internal Anda."
   exit 1
 fi
 
 cd "$PROJECT_DIR" || exit 1
+echo -e "${C_GRAY}📁 Lokasi Folder: $PROJECT_DIR${C_RESET}\n"
 
 # 1. Tentukan Pesan Pembaruan (Commit Message)
 if [ -n "$1" ]; then
@@ -117,5 +134,5 @@ else
   echo -e "${C_GOLD}💡 Tips Solusi:${C_RESET}"
   echo "1. Pastikan koneksi internet di HP Anda aktif."
   echo "2. Pastikan Personal Access Token (PAT) GitHub Anda masih berlaku dan memiliki izin 'repo'."
-  echo "3. Jalankan kembali: ./upartikel.sh"
+  echo "3. Jalankan kembali: upartikel"
 fi
